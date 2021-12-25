@@ -37,7 +37,8 @@ const useStyles = makeStyles(theme => ({
     fontWeight: 400,
     "&:focus": {
       outline: 'unset',
-    }
+    },
+    caretColor: 'cornflowerblue'
   },
   newTweetBtn: {
     color: "white !important",
