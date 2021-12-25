@@ -20,7 +20,7 @@
   "success.register": "شما با موفقیت ثبت نام شدید",
   "success.login": "شما با موفقیت وارد شدید",
   "success.uploadProfPic": "عکس شما با موفقیت آپلود شد",
-  "success.success.newTweet": "توییت شما با موفقیت ارسال شد",
+  "success.newTweet": "توییت شما با موفقیت ارسال شد",
   "tab.login": "ورود",
   "tab.register": "ثبت نام",
   "btn.login": "ورود",

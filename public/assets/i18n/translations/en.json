@@ -20,7 +20,7 @@
   "success.register": "You successfully registered",
   "success.login": "You successfully logged in",
   "success.uploadProfPic": "your new profile picture uploaded",
-  "success.success.newTweet": "your new Tweet sent",
+  "success.newTweet": "your new Tweet sent",
   "tab.login": "login",
   "tab.register": "register",
   "btn.login": "login",
@@ -30,6 +30,6 @@
   "label.password": "password",
   "label.confPassword": "repeat password",
   "label.fullName": "full name",
-  "label.doTweet": "do tweet",
+  "label.doTweet": "tweet...",
   "welcome": "Welcome to our twitter"
 }
