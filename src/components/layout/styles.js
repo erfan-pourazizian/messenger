@@ -5,7 +5,7 @@ const useStyles = makeStyles({
     display: 'flex',
     height: '100vh',
     width: '100%',
-    overflow: 'hidden'
+    overflow: 'hidden',
   },
   leftSidebar: {
     backgroundColor: 'white',

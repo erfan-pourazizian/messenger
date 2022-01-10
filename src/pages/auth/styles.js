@@ -9,7 +9,9 @@ const useStyles = makeStyles(theme => ({
         flexDirection: "column",
         [theme.breakpoints.down("xs")]: {
             width: "87%",
-        }
+        },
+        direction: 'rtl',
+        boxShadow: '0 8px 32px 0 rgb(31 38 135 / 37%)'
     },
     headerText: {
         margin: '1rem',
@@ -17,6 +19,7 @@ const useStyles = makeStyles(theme => ({
     },
     tab: {
         flex: 1,
+        fontSize: '16px',
         fontFamily: 'shabnam !important'
     },
     containerInput: {

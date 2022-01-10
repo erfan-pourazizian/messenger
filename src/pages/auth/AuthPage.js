@@ -7,6 +7,7 @@ import Tab from "@material-ui/core/Tab";
 import Input from "@material-ui/core/Input";
 import Button from "@material-ui/core/Button";
 import {toast} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import {loginApi, registerApi} from "../../api/api_auth";
 import {useTranslation} from "react-i18next";
 

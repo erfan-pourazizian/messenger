@@ -3,9 +3,10 @@ import {makeStyles} from "@material-ui/styles";
 const useStyles = makeStyles(theme => ({
   root: {
     backgroundColor: 'white',
-    width: '25%',
+    width: '22%',
     padding: '1.5rem 2rem',
     overflow: "auto",
+    fontSize: '17px',
     [theme.breakpoints.down("sm")]: {
       width: "35%",
     },
@@ -37,7 +38,7 @@ const useStyles = makeStyles(theme => ({
     padding: "11px 24px"
   },
   tweeterTitle: {
-    fontSize: '1.1rem !important',
+    fontSize: '20px !important',
     fontWeight: "600 !important",
     marginBottom: '11px'
   },

@@ -14,10 +14,10 @@ const useStyles = makeStyles(theme => ({
     fontSize: '1.25rem !important',
     fontWeight: "600 !important",
     marginRight: '1rem',
-    color: theme.palette.primary.main
+    color: '#1690E7'
   },
   hashTagTitle: {
-    fontSize: '1.1rem !important',
+    fontSize: '18px !important',
     fontWeight: "600 !important",
     marginTop: '3rem',
     marginBottom: '1.5rem'
@@ -28,7 +28,11 @@ const useStyles = makeStyles(theme => ({
   hashTagParent: {
     marginBottom: '0.5rem !important',
     padding: "0.15rem !important",
-    width: '100%'
+    width: '100%',
+    borderRadius: '20%',
+    "&:hover": {
+      backgroundColor: '#F7F7F7'
+    }
   },
 }));
 
