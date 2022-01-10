@@ -35,7 +35,7 @@ const App = () => {
                             }/>
                         </Switch>
                         </BrowserRouter>
-                        <ToastContainer/>
+                        <ToastContainer rtl/>
                         </>
                         );
                     };
