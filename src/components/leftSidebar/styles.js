@@ -29,7 +29,8 @@ const useStyles = makeStyles(theme => ({
   profId: {
     flex: 1,
     color: theme.palette.text.hint,
-    fontSize: '0.78rem'
+    fontSize: '0.78rem',
+    direction: "ltr",
   },
   tweeterRoot: {
     background: "#f5f8fa",

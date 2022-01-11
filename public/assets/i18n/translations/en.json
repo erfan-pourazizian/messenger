@@ -30,6 +30,6 @@
   "label.password": "password",
   "label.confPassword": "repeat password",
   "label.fullName": "full name",
-  "label.doTweet": "tweet...",
+  "label.doTweet": "...tweet",
   "welcome": "Welcome to our twitter"
 }

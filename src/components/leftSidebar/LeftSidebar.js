@@ -27,7 +27,7 @@ export const Tweeter = ({name, id, img}) => {
         <Grid item container direction={"column"} style={{width: 'max-content'}} alignItems={"flex-start"}
               className={classes.tweeterNameParent}>
             <Typography className={classes.profName}>{name}</Typography>
-            <Typography className={classes.profId}>{id}</Typography>
+            <Typography className={classes.profId}>@{id}</Typography>
         </Grid>
     </Grid></ButtonBase>
 }
