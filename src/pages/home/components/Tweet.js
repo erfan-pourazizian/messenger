@@ -7,7 +7,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import {likeTweet, setTweetText, useTweetDispatch} from "../../../context/TweetContext";
 import {likeTweetRequest} from "../../../api/api_tweet";
 import {toast} from "react-toastify";
-import Divider from "@material-ui/core/Divider";
+
 
 const Tweet = ({data}) => {
 
