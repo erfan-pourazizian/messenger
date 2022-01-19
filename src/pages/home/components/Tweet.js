@@ -16,13 +16,13 @@ const Tweet = ({data}) => {
   const renderTweet = (text) => {
     return {__html: text.replace(/#\S+/g, "<a href='/tags/$&' style='color:cornflowerblue'>$&</a>")};
   };
-
+// set profile if user have it
   const getImage = () => {
     if (data.user.image)
       return data.user.image;
     else return "/images/person.png";
   };
-
+// handle tweets like
   const handleLike = () => {
     likeTweetRequest(data._id, (isOk, data) => {
       if (!isOk)
@@ -30,6 +30,7 @@ const Tweet = ({data}) => {
       likeTweet(tweetDispatch, data._id);
     });
   }
+  // retweet button function
   const retweetClick = () => {
     setTweetText(tweetDispatch, data.text);
   }
