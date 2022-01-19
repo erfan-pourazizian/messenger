@@ -12,7 +12,7 @@ import Divider from "@material-ui/core/Divider";
 const Tweet = ({data}) => {
 
   const tweetDispatch = useTweetDispatch();
-//  blue #
+//  make after # text blue
   const renderTweet = (text) => {
     return {__html: text.replace(/#\S+/g, "<a href='/tags/$&' style='color:cornflowerblue'>$&</a>")};
   };
