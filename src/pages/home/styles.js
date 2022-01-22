@@ -68,7 +68,7 @@ const useStyles = makeStyles(theme => ({
     },
     tweetItemName: {
         fontWeight: 600,
-        marginTop: '1rem'
+        marginTop: '0.5rem'
     },
     tweetItemId: {
         fontSize: '0.9rem',
@@ -78,7 +78,7 @@ const useStyles = makeStyles(theme => ({
     },
     tweetText: {
         fontSize: '1rem',
-        marginTop: '1.5rem'
+
     },
     likeCount: {
         fontSize: '0.8rem',
@@ -86,10 +86,11 @@ const useStyles = makeStyles(theme => ({
         marginLeft: '0.5rem',
     },
     tweetImg: {
-        width: '10rem', height: '10rem',
+        width: '100%', height: 'auto',
         marginTop: '1rem',
         backgroundSize: 'contain',
-        backgroundRepeat: 'no-repeat'
+        backgroundRepeat: 'no-repeat',
+
     }
 }));
 
