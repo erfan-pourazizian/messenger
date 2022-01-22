@@ -48,9 +48,7 @@ const Tweet = ({data}) => {
           <Typography dangerouslySetInnerHTML={renderTweet(data.text)} className={classes.tweetText} component={"p"}/>
           {
             data.image &&
-            <div>
-              <div style={{backgroundImage: `url(${data.image})`}} className={classes.tweetImg}></div>
-            </div>
+              <img src={data.image} className={classes.tweetImg}></img>
           }
         </Grid>
       </Grid>
