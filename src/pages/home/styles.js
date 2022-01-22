@@ -67,14 +67,14 @@ const useStyles = makeStyles(theme => ({
         marginLeft: "1rem"
     },
     tweetItemName: {
-        fontWeight: 600,
+        fontSize: "1.2rem",
         marginTop: '0.5rem'
     },
     tweetItemId: {
         fontSize: '0.9rem',
         color: theme.palette.text.hint,
         marginRight: '0.5rem',
-        paddingTop: '0.1rem'
+        marginTop:'0.9rem',
     },
     tweetText: {
         fontSize: '1rem',
