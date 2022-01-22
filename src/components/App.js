@@ -41,7 +41,7 @@ const App = () => {
 };
 
 const isLogin = () => !!localStorage.getItem("x-auth-token");
-
+// public route(login page)
 const PublicRoute = ({component, ...props}) => {
     return <Route {...props} render={(props) => {
         if (isLogin())
@@ -51,7 +51,7 @@ const PublicRoute = ({component, ...props}) => {
         }
     }}/>
 };
-
+// private route(except login page)
 const PrivateRoute = ({render, ...props}) => {
     return <Route {...props} render={(props) => {
         if (isLogin())

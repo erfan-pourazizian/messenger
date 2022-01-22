@@ -13,7 +13,7 @@ import {toast} from "react-toastify";
 const Home = () => {
   const classes = useStyle();
   const {t} = useTranslation();
-
+// context
   const tweetDispatch = useTweetDispatch();
   const {tweetList : tweets} = useTweetState();
 
@@ -22,7 +22,7 @@ const Home = () => {
   },
        // eslint-disable-next-line
       []);
-
+// update tweets
   const updateTweets = () => {
     getAllTweets((isOk, data) => {
       if (!isOk)

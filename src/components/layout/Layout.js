@@ -19,11 +19,12 @@ const Layout = (props) => {
     const history = useHistory();
     const theme = useTheme();
     const {t} = useTranslation();
+    // responsive for phone and tablet
     const isTabletSize = useMediaQuery(theme.breakpoints.down("sm"));
     const isPhoneSize = useMediaQuery(theme.breakpoints.down("xs"))
-
+// set circular progress
     const [wait, setWait] = useState(true);
-// check account is active
+// check account is active and log out if account is disable
     useEffect(() => {
         getProfileRequest((isOk, data) => {
             if (!isOk) {
@@ -40,7 +41,7 @@ const Layout = (props) => {
     },
         // eslint-disable-next-line
         [])
-
+// show circular progress until get response from api
     if (wait)
         return <div className={classes.waitParent}>
             <CircularProgress className={"uni_m_b_small"}/>
@@ -49,12 +50,14 @@ const Layout = (props) => {
     else
         return (
             <div className={classes.root}>
+                // dont show right sidebar for tablet view
                 {isTabletSize ? <TwitterDrawer/> : <RightSidebar/>}
                 <Divider orientation={"vertical"} className={classes.divider}/>
                 <div className={classes.content}>
                     {props.children}
                 </div>
                 <Divider orientation={"vertical"} className={classes.divider}/>
+                // dont show left sidebar for phone view
                 {isPhoneSize  ? <LeftSideDrawer/> :<LeftSidebar/>}
             </div>
         );

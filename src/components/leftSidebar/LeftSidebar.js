@@ -15,14 +15,15 @@ import {useTranslation} from "react-i18next";
 
 export const Tweeter = ({name, id, img}) => {
     const classes = useStyle();
-
+// show profile photo if exist
     const getImage = () => {
         if (img)
             return img;
         return "/images/person.png"
     }
 
-    return <ButtonBase style={{width: "100%"}}><Grid container direction={"row"} className={classes.tweeterParent}>
+    return <ButtonBase style={{width: "100%"}}>
+        <Grid container direction={"row"} className={classes.tweeterParent}>
         <img src={getImage()} className={classes.twitterImg} alt={"profile"}/>
         <Grid item container direction={"column"} style={{width: 'max-content'}} alignItems={"flex-start"}
               className={classes.tweeterNameParent}>
@@ -42,6 +43,7 @@ const LeftSidebar = () => {
     const [anchorMenu, setAnchorMenu] = useState();
     const inputRef = useRef();
 
+    // get left side users(best tweeters)
     useEffect(() => {
         getUsers((isOk, data) => {
             if (!isOk)
@@ -51,14 +53,14 @@ const LeftSidebar = () => {
     },
         // eslint-disable-next-line
         []);
-
+// setting menu
     const handleToggleMenu = (e) => {
         if (anchorMenu)
             setAnchorMenu(null);
         else
             setAnchorMenu(e.currentTarget);
     };
-
+// set profile photo(avatar)
     const handleAvatarChange = (e) => {
         if (e.target.files && e.target.files.length > 0) {
             setImageFile(e.target.files[0])
@@ -88,7 +90,7 @@ const LeftSidebar = () => {
             i18n.changeLanguage("fa");
         }
     };
-// set profile
+// get profile
     const getImage = () => {
         if (imagePath)
             return imagePath;
@@ -113,6 +115,7 @@ const LeftSidebar = () => {
                     {t("userListTitle")}
                 </Typography>
                 <Divider style={{marginLeft: -24, marginRight: -24}}/>
+                // map server info for set id,name,img in tweeter func
                 {
                     users.map((item, index) => {
                         return (<Link to={`/users/${item._id}/${item.name}`} style={{width: "100%"}}>
@@ -124,6 +127,7 @@ const LeftSidebar = () => {
                     })
                 }
             </Grid>
+            // menu setting
             <Menu open={Boolean(anchorMenu)} onClose={() => setAnchorMenu(null)} anchorEl={anchorMenu}>
                 <MenuItem onClick={() => {
                     inputRef.current.click();

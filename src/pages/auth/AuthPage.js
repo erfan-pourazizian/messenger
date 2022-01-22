@@ -34,13 +34,14 @@ const AuthPage = () => {
   const handleChangeTab = (e, newValue) => {
     setTab(newValue);
   };
-
+// validate login
   const validateLogin = (user) => {
     if (!user.username)
       return t("validate.userName");
     if (!user.password)
       return t("validate.password")
   };
+  // validate register
   const validateRegister = (user) => {
     if (!user.username)
       return t("validate.userName");
@@ -51,7 +52,7 @@ const AuthPage = () => {
     if (user.password !== user.confPasswordRegister)
       return t("validate.confPassword")
   };
-
+// handle Register
   const handleRegister = () => {
     const user = {
       name: fullNameRegister,
@@ -75,6 +76,7 @@ const AuthPage = () => {
       window.location.reload();
     })
   };
+  // handle login
   const handleLogin = () => {
     const user = {
       username: usernameLogin,

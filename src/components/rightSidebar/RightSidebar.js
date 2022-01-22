@@ -15,6 +15,7 @@ const RightSidebar = () => {
   const classes = useStyle();
   const {hashTags} = useTweetState();
   const tweetDispatch = useTweetDispatch();
+  //  fetch hashtags
   useEffect(() => {
     getHashTags((isOk, data) => {
       if (!isOk)
