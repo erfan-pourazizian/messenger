@@ -43,7 +43,7 @@ const Tweet = ({data}) => {
         <Grid item container direction={"column"} style={{flex: 1, marginRight: '1rem'}}>
           <Grid item container>
             <Typography className={classes.tweetItemName}>{data.user.name}</Typography>
-            <Typography className={classes.tweetItemId}>{data.user.id}</Typography>
+            <Typography className={classes.tweetItemId}>{data.user.username}@</Typography>
           </Grid>
           <Typography dangerouslySetInnerHTML={renderTweet(data.text)} className={classes.tweetText} component={"p"}/>
           {
