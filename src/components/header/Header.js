@@ -17,7 +17,7 @@ const Header = ({title, icon}) => {
 
     return (
         <div className={classes.header}>
-            // just show icon for tablet drawer
+            {/*just show icon for tablet drawer*/}
             {isTabletSize && (
                 <iconButton onClick={()=>toggleDrawer(layoutDispatch)} className={classes.moreMenu} >
                 <MenuRoundedIcon/>
@@ -27,7 +27,7 @@ const Header = ({title, icon}) => {
             <Typography className={classes.headerTitle}>
                 {title}
             </Typography>
-            // just show icon for phone  drawer
+             {/*just show icon for phone  drawer*/}
             {isPhoneSize && (
                 <iconButton onClick={()=>toggleLeftDrawer(layoutDispatch)} className={classes.leftMenu}>
                     <GroupIcon/>

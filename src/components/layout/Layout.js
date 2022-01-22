@@ -50,14 +50,14 @@ const Layout = (props) => {
     else
         return (
             <div className={classes.root}>
-                // dont show right sidebar for tablet view
+                {/*dont show right sidebar for tablet view*/}
                 {isTabletSize ? <TwitterDrawer/> : <RightSidebar/>}
                 <Divider orientation={"vertical"} className={classes.divider}/>
                 <div className={classes.content}>
                     {props.children}
                 </div>
                 <Divider orientation={"vertical"} className={classes.divider}/>
-                // dont show left sidebar for phone view
+                {/*dont show left sidebar for phone view*/}
                 {isPhoneSize  ? <LeftSideDrawer/> :<LeftSidebar/>}
             </div>
         );

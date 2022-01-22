@@ -115,7 +115,7 @@ const LeftSidebar = () => {
                     {t("userListTitle")}
                 </Typography>
                 <Divider style={{marginLeft: -24, marginRight: -24}}/>
-                // map server info for set id,name,img in tweeter func
+                {/*map server info for set id,name,img in tweeter func*/}
                 {
                     users.map((item, index) => {
                         return (<Link to={`/users/${item._id}/${item.name}`} style={{width: "100%"}}>
@@ -127,7 +127,7 @@ const LeftSidebar = () => {
                     })
                 }
             </Grid>
-            // menu setting
+            {/*menu setting*/}
             <Menu open={Boolean(anchorMenu)} onClose={() => setAnchorMenu(null)} anchorEl={anchorMenu}>
                 <MenuItem onClick={() => {
                     inputRef.current.click();
