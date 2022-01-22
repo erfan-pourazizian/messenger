@@ -31,33 +31,33 @@ const App = () => {
                                     </Switch>
                                 </Layout>
                             </TweetProvider>
-                            </LayoutProvider>
-                            }/>
-                        </Switch>
-                        </BrowserRouter>
-                        <ToastContainer rtl/>
-                        </>
-                        );
-                    };
+                        </LayoutProvider>
+                    }/>
+                </Switch>
+            </BrowserRouter>
+            <ToastContainer rtl/>
+        </>
+    );
+};
 
-                    const isLogin = () => !!localStorage.getItem("x-auth-token");
+const isLogin = () => !!localStorage.getItem("x-auth-token");
 
-                    const PublicRoute = ({component, ...props}) => {
-                    return <Route {...props} render={(props) => {
-                    if (isLogin())
-                    return <Redirect to={"/"}/>
-                    else {
-                    return React.createElement(component, props);
-                }
-                }}/>
-                };
+const PublicRoute = ({component, ...props}) => {
+    return <Route {...props} render={(props) => {
+        if (isLogin())
+            return <Redirect to={"/"}/>
+        else {
+            return React.createElement(component, props);
+        }
+    }}/>
+};
 
-                    const PrivateRoute = ({render, ...props}) => {
-                    return <Route {...props} render={(props) => {
-                    if (isLogin())
-                    return render(props);
-                    else return <Redirect to={"/login"}/>
-                }}/>
-                }
+const PrivateRoute = ({render, ...props}) => {
+    return <Route {...props} render={(props) => {
+        if (isLogin())
+            return render(props);
+        else return <Redirect to={"/login"}/>
+    }}/>
+}
 
-                    export default App;
+export default App;
