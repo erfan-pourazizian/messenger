@@ -5,7 +5,7 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: 'white',
     width: '22%',
     padding: '1.5rem 2rem',
-    overflow: "auto",
+    overflow: "hidden",
     fontSize: '17px',
     [theme.breakpoints.down("sm")]: {
       width: "35%",
