@@ -25,7 +25,6 @@ const RightSidebar = () => {
   },
        // eslint-disable-next-line
       []);
-
   return (
     <div className={classes.root} >
       <Link to={"/"}>
@@ -45,7 +44,7 @@ const RightSidebar = () => {
       </Typography>
       <Grid container direction={"column"} alignItems={"center"}>
         {
-          hashTags.map(item => <ButtonBase className={classes.hashTagParent}>
+          hashTags.slice(0,15).map(item => <ButtonBase className={classes.hashTagParent}>
               <Link to={"/hashtags/" + item.text} style={{width: '100%'}}>
                 <Grid item container>
                   <img src={"/images/hashtag.png"} alt={"hashtag"}/>
