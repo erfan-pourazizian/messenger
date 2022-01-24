@@ -48,7 +48,7 @@ const useStyles = makeStyles(theme => ({
             outline: 'unset',
         },
         caretColor: 'cornflowerblue',
-        background: 'rgba( 255, 255, 255, 0.25 )',
+        background: 'transparent',
     },
     newTweetBtn: {
         color: "white !important",
