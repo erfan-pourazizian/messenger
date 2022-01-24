@@ -22,15 +22,16 @@ export const Tweeter = ({name, id, img}) => {
         return "/images/person.png"
     }
 
-    return <ButtonBase style={{width: "100%"}}>
+    return <ButtonBase className={classes.eachBestUser}>
         <Grid container direction={"row"} className={classes.tweeterParent}>
-        <img src={getImage()} className={classes.twitterImg} alt={"profile"}/>
-        <Grid item container direction={"column"} style={{width: 'max-content'}} alignItems={"flex-start"}
-              className={classes.tweeterNameParent}>
-            <Typography className={classes.profName}>{name}</Typography>
-            <Typography className={classes.profId}>@{id}</Typography>
+            <img src={getImage()} className={classes.twitterImg} alt={"profile"}/>
+            <Grid item container direction={"column"} style={{width: 'max-content'}} alignItems={"flex-start"}
+                  className={classes.tweeterNameParent}>
+                <Typography className={classes.profName}>{name}</Typography>
+                <Typography className={classes.profId}>@{id}</Typography>
+            </Grid>
         </Grid>
-    </Grid></ButtonBase>
+    </ButtonBase>
 }
 
 
@@ -45,12 +46,12 @@ const LeftSidebar = () => {
 
     // get left side users(best tweeters)
     useEffect(() => {
-        getUsers((isOk, data) => {
-            if (!isOk)
-                return toast.error(t("error.userFetchError"));
-            setUsers(data);
-        })
-    },
+            getUsers((isOk, data) => {
+                if (!isOk)
+                    return toast.error(t("error.userFetchError"));
+                setUsers(data);
+            })
+        },
         // eslint-disable-next-line
         []);
 // setting menu
@@ -117,10 +118,10 @@ const LeftSidebar = () => {
                 <Divider style={{marginLeft: -24, marginRight: -24}}/>
                 {/*map server info for set id,name,img in tweeter func*/}
                 {
-                    users.map((item, index) => {
+                    users.slice(0, 7).map((item, index) => {
                         return (<Link to={`/users/${item._id}/${item.name}`} style={{width: "100%"}}>
                             <Tweeter name={item.name} id={item.username} img={item.image}/>
-                            {index !== users.length - 1 &&
+                            {index !== 6 &&
                             <Divider style={{marginLeft: -24, marginRight: -24}}/>
                             }
                         </Link>)

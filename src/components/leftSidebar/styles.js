@@ -19,6 +19,9 @@ const useStyles = makeStyles(theme => ({
     width: 'max-content',
     direction: 'ltr'
   },
+  eachBestUser: {
+    width: '100%'
+  },
   tweeterNameParent: {
     marginRight: '0.5rem',
     width: 'max-content',
