@@ -106,7 +106,6 @@ const AuthPage = () => {
         indicatorColor="primary"
         textColor="primary"
         onChange={handleChangeTab}
-        aria-label="disabled tabs example"
       >
         <Tab label={t("tab.login")} value={LOGIN_TAB_VALUE} className={classes.tab}/>
         <Tab label={t("tab.register")} value={REG_TAB_VALUE} className={classes.tab}/>
