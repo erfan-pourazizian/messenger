@@ -63,7 +63,7 @@ const useStyles = makeStyles(theme => ({
     newTweetImgBtn: {
         borderRadius: "50%",
         padding: "0.2rem !important",
-        // border: "0.5px solid #3337",
+        border: "0.5px solid #5EA9DD",
         marginLeft: "1rem",
         width: "32px",
         height: "32px"
