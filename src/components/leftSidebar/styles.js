@@ -35,6 +35,12 @@ const useStyles = makeStyles(theme => ({
     fontSize: '0.78rem',
     direction: "ltr",
   },
+  settingIcon: {
+    width: '16px',
+    height: '16px',
+    marginLeft: '10px',
+    marginTop: '3px'
+  },
   tweeterRoot: {
     background: "#f5f8fa",
     marginTop: "3rem",

@@ -109,6 +109,7 @@ const LeftSidebar = () => {
                     <Typography className={classes.profName}>{localStorage.getItem("name")}</Typography>
                     <Typography className={classes.profId}>{localStorage.getItem("username")}</Typography>
                 </Grid>
+                <img className={classes.settingIcon} src={"/images/setting.png"}/>
                 <input ref={inputRef} type={'file'} style={{display: 'none'}} onChange={handleAvatarChange}/>
             </Grid>
             <Grid item container direction={"column"} className={classes.tweeterRoot}>
