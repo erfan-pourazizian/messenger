@@ -101,6 +101,15 @@ const AuthPage = () => {
             window.location.reload();
         })
     };
+    const signInFinder = () => document.getElementById("keyBind").click()
+
+    document.onkeydown = function (ev) {
+        ev = ev || window.event;
+        switch (ev.which || ev.keyCode) {
+            case 13 : signInFinder()
+                break;
+        }
+    }
 
     return (
 
@@ -130,7 +139,7 @@ const AuthPage = () => {
                         control={<Checkbox color="primary"/>}
                         label={t("label.reminder")}
                     />
-                    <Button variant={"contained"} color="primary" onClick={handleLogin}>{t("btn.login")}</Button>
+                    <Button id={"keyBind"} variant={"contained"} color="primary" onClick={handleLogin}>{t("btn.login")}</Button>
                 </div>
                 }
                 {tab === REG_TAB_VALUE &&
@@ -151,7 +160,7 @@ const AuthPage = () => {
                     <Input className={"uni_m_b_small"}
                            value={confPasswordRegister} onChange={e => setConfPasswordRegister(e.target.value)}
                     />
-                    <Button variant={"contained"} color="primary" onClick={handleRegister}>{t("btn.register")}</Button>
+                    <Button id={"keyBind"} variant={"contained"} color="primary" onClick={handleRegister}>{t("btn.register")}</Button>
                 </div>
                 }
                 <div className={classes.socialMedia}>
