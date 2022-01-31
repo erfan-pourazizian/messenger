@@ -66,6 +66,16 @@ const NewTweet = ({updateTweets}) => {
     const selectImg = () => {
         inputFile.current.click();
     };
+    // add enter keybind for newPost
+    const newTweetFinder = () => document.getElementById("newTweetBtn").click()
+    
+    document.onkeydown = function (ev) {
+        ev = ev || window.event;
+        switch (ev.which || ev.keyCode) {
+            case 13 : newTweetFinder()
+                break;
+        }
+    }
 
     const classes = useStyle();
     return (
@@ -84,7 +94,7 @@ const NewTweet = ({updateTweets}) => {
                 </div>
             }
             <Grid container direction={"row-reverse"} style={{marginTop: 16}}>
-                <Button variant={"contained"} color={"primary"}
+                <Button id={"newTweetBtn"} variant={"contained"} color={"primary"}
                         className={classes.newTweetBtn} onClick={newTweetClick}>{t("btn.tweet")}</Button>
                 <IconButton className={classes.newTweetImgBtn} onClick={selectImg}>
                     <img src={"/images/gallery.png"} className={classes.newTweetImg} alt={"send"}/>
