@@ -31,5 +31,6 @@
   "label.confPassword": "repeat password",
   "label.fullName": "full name",
   "label.doTweet": "...tweet",
-  "welcome": "Welcome to our twitter"
+  "label.or": "or use",
+  "label.reminder": "Remember me",
 }

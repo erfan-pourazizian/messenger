@@ -31,5 +31,6 @@
   "label.confPassword": "تکرار رمز عبور",
   "label.fullName": "نام کامل",
   "label.doTweet": "توییت کن ...",
-  "welcome": "خوش آمدید به توییتر"
+  "label.or": "یا با استفاده از",
+  "label.reminder": "مرا بخاطر بسپار"
 }
