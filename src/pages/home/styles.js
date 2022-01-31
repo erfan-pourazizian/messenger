@@ -20,11 +20,9 @@ const useStyles = makeStyles(theme => ({
     },
     newTweet: {
         padding: 18,
-        // backgroundColor: 'red',
         display: 'flex',
         flexDirection: 'column',
         background: 'rgba( 255, 255, 255, 0.25 )',
-        // boxShadow: '0 8px 32px 0 rgba( 31, 38, 135, 0.37 )',
         borderRadius: '10px',
         border: '1px solid rgba(255, 255, 255, 0.18)',
 
@@ -61,12 +59,23 @@ const useStyles = makeStyles(theme => ({
     },
     newTweetImg: {},
     newTweetImgBtn: {
-        borderRadius: "50%",
         padding: "0.2rem !important",
-        border: "0.5px solid #5EA9DD",
         marginLeft: "1rem",
+        marginRight: "-1rem",
         width: "32px",
         height: "32px"
+    },
+    newTweetLike: {
+        padding: "0.2rem !important",
+        marginLeft: "1rem",
+        width: "40px",
+        height: "32px",
+        overflow: 'hidden'
+    },
+    likeCount: {
+        fontSize: '0.8rem',
+        color: theme.palette.text.hint,
+        marginLeft: '-1rem',
     },
     tweetItemName: {
         fontSize: "1.2rem",
@@ -76,16 +85,11 @@ const useStyles = makeStyles(theme => ({
         fontSize: '0.9rem',
         color: theme.palette.text.hint,
         marginRight: '0.5rem',
-        marginTop:'0.9rem',
+        marginTop:'0.75rem',
     },
     tweetText: {
         fontSize: '1rem',
 
-    },
-    likeCount: {
-        fontSize: '0.8rem',
-        color: theme.palette.text.hint,
-        marginLeft: '0.5rem',
     },
     tweetImg: {
         width: '100%', height: 'auto',
