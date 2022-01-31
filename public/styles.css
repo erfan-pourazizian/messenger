@@ -38,13 +38,15 @@ a:visited {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #5EA9DD;
+  background-color: #05e8ba;
+  background-image: linear-gradient(315deg, #05e8ba 0%, #087ee1 74%);
   border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #1c53e3;
+  background-color: #0abcf9;
+  background-image: linear-gradient(315deg, #0abcf9 0%, #2c69d1 74%);
 }
 
 .MuiDrawer-paperAnchorRight {
