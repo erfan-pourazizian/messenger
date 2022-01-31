@@ -7,6 +7,8 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import {likeTweet, setTweetText, useTweetDispatch} from "../../../context/TweetContext";
 import {likeTweetRequest} from "../../../api/api_tweet";
 import {toast} from "react-toastify";
+import {Favorite, FavoriteBorder} from "@material-ui/icons";
+import {Checkbox, FormControlLabel} from "@material-ui/core";
 
 
 const Tweet = ({data}) => {
@@ -57,9 +59,10 @@ const Tweet = ({data}) => {
                 <IconButton className={classes.newTweetImgBtn} onClick={retweetClick}>
                     <img src={"/images/retweet.png"} className={classes.newTweetImg} alt={"retweet"}/>
                 </IconButton>
-                <IconButton className={classes.newTweetImgBtn} onClick={handleLike}>
-                    <FavoriteIcon/>
-                </IconButton>
+                <FormControlLabel className={classes.newTweetLike} control={<Checkbox
+                onClick={handleLike}
+                icon={<FavoriteBorder/>}
+                checkedIcon={<Favorite/>}/>}/>
                 <Typography className={classes.likeCount}>{data.likes}</Typography>
             </Grid>
         </div>
