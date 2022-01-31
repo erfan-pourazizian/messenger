@@ -68,7 +68,7 @@ const NewTweet = ({updateTweets}) => {
     };
     // add enter keybind for newPost
     const newTweetFinder = () => document.getElementById("newTweetBtn").click()
-    
+
     document.onkeydown = function (ev) {
         ev = ev || window.event;
         switch (ev.which || ev.keyCode) {
