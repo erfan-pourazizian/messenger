@@ -37,6 +37,15 @@ const useStyles = makeStyles(theme => ({
             backgroundColor: '#F7F7F7'
         }
     },
+    profile: {
+        height: 60,
+        width: 60,
+        borderRadius: '50%'
+    },
+    tweetContainer: {
+        flex: 1,
+        marginRight: '1rem'
+    },
     input: {
         marginRight: '1rem',
         border: 'none',
@@ -57,7 +66,10 @@ const useStyles = makeStyles(theme => ({
         lineHeight: "1rem !important",
         minWidth: "5rem !important"
     },
-    newTweetImg: {},
+    retweetGrid:{
+        marginTop: 16,
+        alignItems: 'center'
+    },
     newTweetImgBtn: {
         padding: "0.2rem !important",
         marginLeft: "1rem",
@@ -85,7 +97,7 @@ const useStyles = makeStyles(theme => ({
         fontSize: '0.9rem',
         color: theme.palette.text.hint,
         marginRight: '0.5rem',
-        marginTop:'0.75rem',
+        marginTop: '0.75rem',
     },
     tweetText: {
         fontSize: '1rem',
