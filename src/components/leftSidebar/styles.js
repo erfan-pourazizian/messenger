@@ -11,7 +11,7 @@ const useStyles = makeStyles(theme => ({
       width: "35%",
     },
     [theme.breakpoints.down("xs")]: {
-      width: "87%",
+      width: "80%",
     }
   },
   profText: {
