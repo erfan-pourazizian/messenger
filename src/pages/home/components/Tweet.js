@@ -30,7 +30,7 @@ const Tweet = ({data}) => {
             likeTweet(tweetDispatch, data._id);
         });
     }
-    // retweet button function
+    // retweet button setState
     const retweetClick = () => {
         setTweetText(tweetDispatch, data.text);
     }
