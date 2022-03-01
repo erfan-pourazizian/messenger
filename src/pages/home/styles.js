@@ -79,7 +79,7 @@ const useStyles = makeStyles(theme => ({
     },
     newTweetLike: {
         padding: "0.2rem !important",
-        marginLeft: "1rem",
+        marginLeft: "1rem !important",
         width: "40px",
         height: "32px",
         overflow: 'hidden'
