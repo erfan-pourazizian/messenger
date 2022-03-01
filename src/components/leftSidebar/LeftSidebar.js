@@ -119,10 +119,10 @@ const LeftSidebar = () => {
                 <Divider />
                 {/*map server info for set id,name,img in tweeter func*/}
                 {
-                    users.slice(0, 6).map((item, index) => {
+                    users.slice(0, 9).map((item, index) => {
                         return (<Link to={`/users/${item._id}/${item.name}`} style={{width: "100%"}}>
                             <Tweeter name={item.name} id={item.username} img={item.image}/>
-                            {index !== 5 &&
+                            {index !== 8 &&
                             <Divider style={{marginLeft: -24, marginRight: -24}}/>
                             }
                         </Link>)
