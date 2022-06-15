@@ -10,7 +10,6 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.2",
-    "caniuse-lite": "^1.0.30001286",
     "classnames": "^2.2.6",
     "i18next": "^19.6.3",
     "i18next-xhr-backend": "^3.2.2",
