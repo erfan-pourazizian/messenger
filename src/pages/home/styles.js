@@ -29,10 +29,14 @@ const useStyles = makeStyles(theme => ({
     },
     tweetItem: {
         padding: 18,
-        backgroundColor: 'white',
+        background: '#a8c0ff',
         display: 'flex',
         flexDirection: 'column',
+        boxShadow: '0 8px 32px 0 rgb(31 38 135 / 37%)',
+        borderRadius: 7,
+        margin : '1rem 1rem 1rem 1rem',
         marginTop: '0.5rem',
+        transition: '0.3s',
         "&:hover": {
             backgroundColor: '#F7F7F7'
         }
