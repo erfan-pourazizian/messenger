@@ -42,10 +42,11 @@ const useStyles = makeStyles(theme => ({
     marginTop: '3px'
   },
   tweeterRoot: {
-    background: "#f5f8fa",
+    background: "#d2d4d6",
     marginTop: "3rem",
     borderRadius: "2.5rem",
-    padding: "11px 24px"
+    padding: "11px 24px",
+    boxShadow: '0 8px 32px 0 rgb(31 38 135 / 17%)'
   },
   tweeterTitle: {
     fontSize: '20px !important',
