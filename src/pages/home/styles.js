@@ -29,7 +29,7 @@ const useStyles = makeStyles(theme => ({
     },
     tweetItem: {
         padding: 18,
-        background: '#a8c0ff',
+        background: 'rgb(168, 192, 255)',
         display: 'flex',
         flexDirection: 'column',
         boxShadow: '0 8px 32px 0 rgb(31 38 135 / 37%)',
