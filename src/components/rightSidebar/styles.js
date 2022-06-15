@@ -30,7 +30,9 @@ const useStyles = makeStyles(theme => ({
     padding: "0.15rem !important",
     width: '100%',
     borderRadius: '20%',
-  }
+    "&:hover": {
+      background: "#efefef"
+  }},
 }));
 
 
