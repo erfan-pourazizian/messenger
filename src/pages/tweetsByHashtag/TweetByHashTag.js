@@ -28,7 +28,7 @@ const TweetByHashTag = (props) => {
     <div className={classes.root}>
       <Header title={props.match.params.hashtag} icon={<img src={"/images/hashtag.png"} alt={"hashtag_icon"}/>}/>
       <Divider className={classes.divider}/>
-      <TweetList data={tweetList}/>
+      <TweetList  data={tweetList}/>
     </div>
   );
 };

@@ -11,9 +11,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import {loginApi, registerApi} from "../../api/api_auth";
 import {useTranslation} from "react-i18next";
 import Divider from "@material-ui/core/Divider";
-import IconButton from "@material-ui/core/IconButton";
 import {Checkbox, FormControlLabel} from "@material-ui/core";
-import {Favorite, FavoriteBorder} from "@material-ui/icons";
+
 
 const LOGIN_TAB_VALUE = 1;
 const REG_TAB_VALUE = 2;
@@ -108,13 +107,15 @@ const AuthPage = () => {
         switch (ev.which || ev.keyCode) {
             case 13 : signInFinder()
                 break;
+            default :
+                break
         }
     }
 
     return (
 
             <Paper className={classes.container}>
-                <img className={classes.logo} src={"/images/twitter.png"}/>
+                <img className={classes.logo} alt={"twitterIcon"} src={"/images/twitter.png"}/>
                 <Tabs
                     value={tab}
                     indicatorColor="primary"
@@ -168,16 +169,16 @@ const AuthPage = () => {
                     <Typography className={classes.dividerText}> {t("label.or")}</Typography>
                     <div className={classes.iconsParent}>
                         <a href={"https://www.instagram.com/erfan82.p/"}>
-                            <img className={classes.icon} src={"/images/instagram.png"}/>
+                            <img className={classes.icon} alt={"instagram-Icon"} src={"/images/instagram.png"}/>
                         </a>
                         <a href={"https://www.instagram.com/erfan82.p/"}>
-                            <img className={classes.icon} src={"/images/google.png"}/>
+                            <img className={classes.icon} alt={"google-Icon"} src={"/images/google.png"}/>
                         </a>
                         <a href={"https://www.instagram.com/erfan82.p/"}>
-                            <img className={classes.icon} src={"/images/linkedin.png"}/>
+                            <img className={classes.icon} alt={"linkedin-Icon"} src={"/images/linkedin.png"}/>
                         </a>
                         <a href={"https://www.instagram.com/erfan82.p/"}>
-                            <img className={classes.icon} src={"/images/facebook.png"}/>
+                            <img className={classes.icon} alt={"facebook-Icon"} src={"/images/facebook.png"}/>
                         </a>
                     </div>
                 </div>

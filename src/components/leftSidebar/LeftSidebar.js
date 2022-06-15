@@ -109,7 +109,7 @@ const LeftSidebar = () => {
                     <Typography className={classes.profName}>{localStorage.getItem("name")}</Typography>
                     <Typography className={classes.profId}>{localStorage.getItem("username")}</Typography>
                 </Grid>
-                <img className={classes.settingIcon} src={"/images/setting.png"}/>
+                <img className={classes.settingIcon} alt={"setting-img"} src={"/images/setting.png"}/>
                 <input ref={inputRef} type={'file'} style={{display: 'none'}} onChange={handleAvatarChange}/>
             </Grid>
             <Grid item container direction={"column"} className={classes.tweeterRoot}>
@@ -120,8 +120,8 @@ const LeftSidebar = () => {
                 {/*map server info for set id,name,img in tweeter func*/}
                 {
                     users.slice(0, 9).map((item, index) => {
-                        return (<Link to={`/users/${item._id}/${item.name}`} style={{width: "100%"}}>
-                            <Tweeter name={item.name} id={item.username} img={item.image}/>
+                        return (<Link key={index} to={`/users/${item._id}/${item.name}`} style={{width: "100%"}}>
+                            <Tweeter  name={item.name} id={item.username} img={item.image}/>
                             {index !== 8 &&
                             <Divider style={{marginLeft: -24, marginRight: -24}}/>
                             }

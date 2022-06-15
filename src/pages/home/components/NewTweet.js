@@ -74,6 +74,8 @@ const NewTweet = ({updateTweets}) => {
         switch (ev.which || ev.keyCode) {
             case 13 : newTweetFinder()
                 break;
+            default:
+                break
         }
     }
 

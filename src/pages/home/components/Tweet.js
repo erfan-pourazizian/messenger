@@ -3,7 +3,6 @@ import Grid from "@material-ui/core/Grid";
 import IconButton from "@material-ui/core/IconButton";
 import useStyle from '../styles'
 import Typography from "@material-ui/core/Typography";
-import FavoriteIcon from '@material-ui/icons/Favorite';
 import {likeTweet, setTweetText, useTweetDispatch} from "../../../context/TweetContext";
 import {likeTweetRequest} from "../../../api/api_tweet";
 import {toast} from "react-toastify";
