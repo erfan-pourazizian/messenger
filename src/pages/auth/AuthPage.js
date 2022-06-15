@@ -176,14 +176,14 @@ const AuthPage = () => {
                         <a href={"https://www.instagram.com/erfan82.p/"}>
                             <img className={classes.icon} alt={"instagram-Icon"} src={"/images/instagram.png"}/>
                         </a>
-                        <a href={"https://www.instagram.com/erfan82.p/"}>
+                        <a href = {"mailto: erfan8202@gmail.com"}>
                             <img className={classes.icon} alt={"google-Icon"} src={"/images/google.png"}/>
                         </a>
-                        <a href={"https://www.instagram.com/erfan82.p/"}>
+                        <a href={"https://ir.linkedin.com/in/erfan-pourazizian"}>
                             <img className={classes.icon} alt={"linkedin-Icon"} src={"/images/linkedin.png"}/>
                         </a>
-                        <a href={"https://www.instagram.com/erfan82.p/"}>
-                            <img className={classes.icon} alt={"facebook-Icon"} src={"/images/facebook.png"}/>
+                        <a href={"https://github.com/Enzo8202"}>
+                            <img className={classes.icon} alt={"github-Icon"} src={"/images/github.png"}/>
                         </a>
                     </div>
                 </div>
