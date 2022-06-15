@@ -10,7 +10,7 @@ const P404= () => {
 
   return (
     <div>
-        <img className={classes.notFoundImg} src={"/images/404.png"}/>
+        <img className={classes.notFoundImg} alt={"404photo"} src={"/images/404.png"}/>
         <div className={classes.notFoundText}>
         {t("404_desc")}
         </div>
