@@ -14,6 +14,7 @@ const useStyles = makeStyles(theme => ({
         [theme.breakpoints.down("xs")]: {
             width: "87%",
         },
+        borderRadius: 7,
         direction: 'rtl',
         boxShadow: '0 8px 32px 0 rgb(31 38 135 / 37%)',
     },
