@@ -1,12 +1,16 @@
 import {makeStyles} from "@material-ui/styles";
 
 const useStyles = makeStyles(theme => ({
-
+    main: {
+        height: '100vh',
+        backgroundColor: "darkgray",
+        overflow: 'hidden !important',
+        MozOverflow:'hidden !important'
+    },
     container: {
         background: "white",
-        overflow: 'hidden',
         width: "30rem",
-        margin: "4.5rem auto",
+        margin: "7rem auto",
         display: "flex",
         flexDirection: "column",
         [theme.breakpoints.down("xs")]: {

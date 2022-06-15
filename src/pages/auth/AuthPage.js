@@ -105,7 +105,8 @@ const AuthPage = () => {
     document.onkeydown = function (ev) {
         ev = ev || window.event;
         switch (ev.which || ev.keyCode) {
-            case 13 : signInFinder()
+            case 13 :
+                signInFinder()
                 break;
             default :
                 break
@@ -113,7 +114,7 @@ const AuthPage = () => {
     }
 
     return (
-
+        <div className={classes.main}>
             <Paper className={classes.container}>
                 <img className={classes.logo} alt={"twitterIcon"} src={"/images/twitter.png"}/>
                 <Tabs
@@ -126,43 +127,45 @@ const AuthPage = () => {
                     <Tab label={t("tab.register")} value={REG_TAB_VALUE} className={classes.tab}/>
                 </Tabs>
                 {tab === LOGIN_TAB_VALUE &&
-                <div className={classes.containerInput}>
-                    <Typography>{t("label.username")}</Typography>
-                    <Input className={"uni_m_b_small"}
-                           value={usernameLogin} onChange={e => setUsernameLogin(e.target.value)}
-                    >
-                    </Input>
-                    <Typography>{t("label.password")}</Typography>
-                    <Input className={"uni_m_b_small"}
-                           value={passwordLogin} onChange={e => setPasswordLogin(e.target.value)}
-                    />
-                    <FormControlLabel className={classes.markIcon}
-                        control={<Checkbox color="primary"/>}
-                        label={t("label.reminder")}
-                    />
-                    <Button id={"keyBind"} variant={"contained"} color="primary" onClick={handleLogin}>{t("btn.login")}</Button>
-                </div>
+                    <div className={classes.containerInput}>
+                        <Typography>{t("label.username")}</Typography>
+                        <Input className={"uni_m_b_small"}
+                               value={usernameLogin} onChange={e => setUsernameLogin(e.target.value)}
+                        >
+                        </Input>
+                        <Typography>{t("label.password")}</Typography>
+                        <Input className={"uni_m_b_small"}
+                               value={passwordLogin} onChange={e => setPasswordLogin(e.target.value)}
+                        />
+                        <FormControlLabel className={classes.markIcon}
+                                          control={<Checkbox color="primary"/>}
+                                          label={t("label.reminder")}
+                        />
+                        <Button id={"keyBind"} variant={"contained"} color="primary"
+                                onClick={handleLogin}>{t("btn.login")}</Button>
+                    </div>
                 }
                 {tab === REG_TAB_VALUE &&
-                <div className={classes.containerInput}>
-                    <Typography>{t("label.fullName")}</Typography>
-                    <Input className={"uni_m_b_small"}
-                           value={fullNameRegister} onChange={e => setFullNameRegister(e.target.value)}
-                    />
-                    <Typography>{t("label.username")}</Typography>
-                    <Input className={"uni_m_b_small"}
-                           value={usernameRegister} onChange={e => setUsernameRegister(e.target.value)}
-                    />
-                    <Typography>{t("label.password")}</Typography>
-                    <Input className={"uni_m_b_small"}
-                           value={passwordRegister} onChange={e => setPasswordRegister(e.target.value)}
-                    />
-                    <Typography>{t("label.confPassword")}</Typography>
-                    <Input className={"uni_m_b_small"}
-                           value={confPasswordRegister} onChange={e => setConfPasswordRegister(e.target.value)}
-                    />
-                    <Button id={"keyBind"} variant={"contained"} color="primary" onClick={handleRegister}>{t("btn.register")}</Button>
-                </div>
+                    <div className={classes.containerInput}>
+                        <Typography>{t("label.fullName")}</Typography>
+                        <Input className={"uni_m_b_small"}
+                               value={fullNameRegister} onChange={e => setFullNameRegister(e.target.value)}
+                        />
+                        <Typography>{t("label.username")}</Typography>
+                        <Input className={"uni_m_b_small"}
+                               value={usernameRegister} onChange={e => setUsernameRegister(e.target.value)}
+                        />
+                        <Typography>{t("label.password")}</Typography>
+                        <Input className={"uni_m_b_small"}
+                               value={passwordRegister} onChange={e => setPasswordRegister(e.target.value)}
+                        />
+                        <Typography>{t("label.confPassword")}</Typography>
+                        <Input className={"uni_m_b_small"}
+                               value={confPasswordRegister} onChange={e => setConfPasswordRegister(e.target.value)}
+                        />
+                        <Button id={"keyBind"} variant={"contained"} color="primary"
+                                onClick={handleRegister}>{t("btn.register")}</Button>
+                    </div>
                 }
                 <div className={classes.socialMedia}>
                     <Divider variant={"middle"} className={classes.divider}/>
@@ -183,6 +186,7 @@ const AuthPage = () => {
                     </div>
                 </div>
             </Paper>
+        </div>
     );
 };
 
