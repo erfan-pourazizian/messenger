@@ -12,6 +12,7 @@ import {loginApi, registerApi} from "../../api/api_auth";
 import {useTranslation} from "react-i18next";
 import Divider from "@material-ui/core/Divider";
 import {Checkbox, FormControlLabel} from "@material-ui/core";
+import BackGround from "../liveBackground/backGround";
 
 
 const LOGIN_TAB_VALUE = 1;
@@ -113,6 +114,7 @@ const AuthPage = () => {
         }
     }
 
+
     return (
         <div className={classes.main}>
             <Paper className={classes.container}>
@@ -186,7 +188,9 @@ const AuthPage = () => {
                     </div>
                 </div>
             </Paper>
+                <BackGround/>
         </div>
+
     );
 };
 

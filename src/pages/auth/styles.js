@@ -2,23 +2,22 @@ import {makeStyles} from "@material-ui/styles";
 
 const useStyles = makeStyles(theme => ({
     main: {
-        height: '100vh',
-        backgroundColor: "darkgray",
         overflow: 'hidden !important',
-        MozOverflow:'hidden !important'
+        MozOverflow:'hidden !important',
     },
     container: {
         background: "white",
         width: "30rem",
-        margin: "7rem auto",
+        margin: "6rem auto",
         display: "flex",
         flexDirection: "column",
         [theme.breakpoints.down("xs")]: {
             width: "87%",
         },
         direction: 'rtl',
-        boxShadow: '0 8px 32px 0 rgb(31 38 135 / 37%)'
+        boxShadow: '0 8px 32px 0 rgb(31 38 135 / 37%)',
     },
+
     logo: {
         alignSelf: 'center',
         width: '80px'
