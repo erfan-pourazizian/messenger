@@ -116,7 +116,6 @@ const LeftSidebar = () => {
                 <Typography className={classes.tweeterTitle}>
                     {t("userListTitle")}
                 </Typography>
-                <Divider />
                 {/*map server info for set id,name,img in tweeter func*/}
                 {
                     users.slice(0, 9).map((item, index) => {
