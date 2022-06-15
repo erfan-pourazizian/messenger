@@ -11,9 +11,6 @@ export const getAxiosInstanceJsonServer = () => {
 export const getAxiosInstanceAuth = () => {
   return Axios.create({
     baseURL: "https://twitterapi.liara.run/api/",
-    headers: {
-      // API_KEY: "lsdkljfalksfjasdfkjlasfjklasdkfjsadjf"
-    }
   });
 };
 export const getAxiosInstanceApi = () => {
