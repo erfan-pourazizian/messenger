@@ -157,7 +157,41 @@ a:visited {
   animation-delay: 0s;
   animation-duration: 11s;
 }
-
+.circles li:nth-child(11){
+  left: 55%;
+  width: 100px;
+  height: 100px;
+  animation-delay: 7s;
+  animation-duration: 31s;
+}
+.circles li:nth-child(12){
+  left: 45%;
+  width: 50px;
+  height: 50px;
+  animation-delay: 25s;
+  animation-duration: 15s;
+}
+.circles li:nth-child(13){
+  left: 15%;
+  width: 70px;
+  height: 70px;
+  animation-delay: 0s;
+  animation-duration: 11s;
+}
+.circles li:nth-child(14){
+  left: 15%;
+  width: 50px;
+  height: 50px;
+  animation-delay: 10s;
+  animation-duration: 17s;
+}
+.circles li:nth-child(15){
+  left: 35%;
+  width: 40px;
+  height: 40px;
+  animation-delay: 0s;
+  animation-duration: 20s;
+}
 
 
 @keyframes animate {
