@@ -13,6 +13,7 @@ import {useTranslation} from "react-i18next";
 import Divider from "@material-ui/core/Divider";
 import {Checkbox, FormControlLabel} from "@material-ui/core";
 import BackGround from "../liveBackground/backGround";
+import SocialmediaSection from "./SocialmediaSection";
 
 
 const LOGIN_TAB_VALUE = 1;
@@ -112,7 +113,18 @@ const AuthPage = () => {
             default :
                 break
         }
-    }
+    };
+
+    const usernameLoginHandler = e => setUsernameLogin(e.target.value)
+    const passwordLoginHandler = e => setPasswordLogin(e.target.value)
+
+    const fullNameRegisterHandler = e =>  setFullNameRegister(e.target.value)
+    const usernameRegisterHandler = e => setUsernameRegister(e.target.value)
+    const passwordRegisterHandler = e => setPasswordRegister(e.target.value)
+    const confPasswordRegisterHandler = e => setConfPasswordRegister(e.target.value)
+
+
+
 
 
     return (
@@ -132,12 +144,12 @@ const AuthPage = () => {
                     <div className={classes.containerInput}>
                         <Typography>{t("label.username")}</Typography>
                         <Input className={"uni_m_b_small"}
-                               value={usernameLogin} onChange={e => setUsernameLogin(e.target.value)}
+                               value={usernameLogin} onChange={usernameLoginHandler}
                         >
                         </Input>
                         <Typography>{t("label.password")}</Typography>
                         <Input className={"uni_m_b_small"}
-                               value={passwordLogin} onChange={e => setPasswordLogin(e.target.value)}
+                               value={passwordLogin} onChange={passwordLoginHandler}
                         />
                         <FormControlLabel className={classes.markIcon}
                                           control={<Checkbox color="primary"/>}
@@ -151,44 +163,29 @@ const AuthPage = () => {
                     <div className={classes.containerInput}>
                         <Typography>{t("label.fullName")}</Typography>
                         <Input className={"uni_m_b_small"}
-                               value={fullNameRegister} onChange={e => setFullNameRegister(e.target.value)}
+                               value={fullNameRegister} onChange={fullNameRegisterHandler}
                         />
                         <Typography>{t("label.username")}</Typography>
                         <Input className={"uni_m_b_small"}
-                               value={usernameRegister} onChange={e => setUsernameRegister(e.target.value)}
+                               value={usernameRegister} onChange={usernameRegisterHandler}
                         />
                         <Typography>{t("label.password")}</Typography>
                         <Input className={"uni_m_b_small"}
-                               value={passwordRegister} onChange={e => setPasswordRegister(e.target.value)}
+                               value={passwordRegister} onChange={passwordRegisterHandler}
                         />
                         <Typography>{t("label.confPassword")}</Typography>
                         <Input className={"uni_m_b_small"}
-                               value={confPasswordRegister} onChange={e => setConfPasswordRegister(e.target.value)}
+                               value={confPasswordRegister} onChange={confPasswordRegisterHandler}
                         />
                         <Button id={"keyBind"} variant={"contained"} color="primary"
                                 onClick={handleRegister}>{t("btn.register")}</Button>
                     </div>
                 }
                 <div className={classes.socialMedia}>
-                    <Divider variant={"middle"} className={classes.divider}/>
-                    <Typography className={classes.dividerText}> {t("label.or")}</Typography>
-                    <div className={classes.iconsParent}>
-                        <a href={"https://www.instagram.com/erfan82.p/"}>
-                            <img className={classes.icon} alt={"instagram-Icon"} src={"/images/instagram.png"}/>
-                        </a>
-                        <a href = {"mailto: erfan8202@gmail.com"}>
-                            <img className={classes.icon} alt={"google-Icon"} src={"/images/google.png"}/>
-                        </a>
-                        <a href={"https://ir.linkedin.com/in/erfan-pourazizian"}>
-                            <img className={classes.icon} alt={"linkedin-Icon"} src={"/images/linkedin.png"}/>
-                        </a>
-                        <a href={"https://github.com/Enzo8202"}>
-                            <img className={classes.icon} alt={"github-Icon"} src={"/images/github.png"}/>
-                        </a>
-                    </div>
+                    <SocialmediaSection/>
                 </div>
             </Paper>
-                <BackGround/>
+            <BackGround/>
         </div>
 
     );
