@@ -12,10 +12,11 @@ const LeftSideDrawer = () => {
         toggleLeftDrawer(Dispatch)
     }
 
-    return <Drawer anchor={"left"} open={leftDrawerOpen} onClose={handleToggle}>
+    return(
+    <Drawer anchor={"left"} open={leftDrawerOpen} onClose={handleToggle}>
         <LeftSidebar/>
     </Drawer>
-}
+    )};
 
 
 export default LeftSideDrawer;
