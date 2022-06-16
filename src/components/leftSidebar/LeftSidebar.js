@@ -12,6 +12,7 @@ import {uploadUserPhoto} from "../../api/api_auth";
 import {toast} from "react-toastify";
 import {useTranslation} from "react-i18next";
 import {Tweeter} from "./Tweeter";
+import {Chip} from "@material-ui/core";
 
 
 const LeftSidebar = () => {
@@ -79,6 +80,11 @@ const LeftSidebar = () => {
         return "/images/user-profiles.png"
     };
 
+    const chipSelector = document.getElementById('leftChip')
+    const handleDelete = () => {
+        chipSelector.style.display = 'none'
+    }
+
     const classes = useStyle();
     return (
         <div className={classes.root}>
@@ -95,6 +101,12 @@ const LeftSidebar = () => {
                 <Typography className={classes.tweeterTitle}>
                     {t("userListTitle")}
                 </Typography>
+                <Chip
+                    id={'leftChip'}
+                    className={classes.chip}
+                    label="برای مشاهده کامنت هر کاربر کلیک کنید"
+                    onDelete={handleDelete}
+                    color="primary"/>
                 {/*map server info for set id,name,img in tweeter func*/}
                 {
                     users.slice(0, 9).map((item, index) => {

@@ -32,8 +32,12 @@ const useStyles = makeStyles(theme => ({
     borderRadius: '20%',
     transition: '0.3s',
     "&:hover": {
-      background: "#F7F7F7"
+      background: "#AEA5A570"
   }},
+  chip: {
+    direction: "ltr",
+    marginBottom : '0.7rem',
+  }
 }));
 
 

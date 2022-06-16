@@ -43,7 +43,7 @@ const useStyles = makeStyles(theme => ({
             marginTop: '3px'
         },
         tweeterRoot: {
-            background: "#d2d4d6",
+            background: "#dde6ef",
             marginTop: "3rem",
             borderRadius: "2.5rem",
             padding: "11px 24px",
@@ -67,7 +67,7 @@ const useStyles = makeStyles(theme => ({
             borderRadius: '50%'
         },
         tweeters: {
-            width: "100%"
+            width: "100%",
         },
         profile: {
             width: 50,
@@ -79,6 +79,10 @@ const useStyles = makeStyles(theme => ({
         },
         fileInput: {
             display: 'none'
+        },
+        chip: {
+            direction: "ltr",
+            marginBottom: '0.7rem',
         }
     }))
 ;
