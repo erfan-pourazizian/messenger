@@ -8,9 +8,11 @@ const LeftSideDrawer = () => {
     const {leftDrawerOpen} = useLayoutState()
     const Dispatch = useLayoutDispatch()
 
-    return <Drawer anchor={"left"} open={leftDrawerOpen} onClose={() => {
+    const handleToggle= ()=> {
         toggleLeftDrawer(Dispatch)
-    }}>
+    }
+
+    return <Drawer anchor={"left"} open={leftDrawerOpen} onClose={handleToggle}>
         <LeftSidebar/>
     </Drawer>
 }
