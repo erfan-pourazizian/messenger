@@ -15,7 +15,7 @@ import {useTranslation} from "react-i18next";
 
 export const Tweeter = ({name, id, img}) => {
     const classes = useStyle();
-// show profile photo if exist
+    // show profile photo if exist
     const getImage = () => {
         if (img)
             return img;
@@ -25,7 +25,7 @@ export const Tweeter = ({name, id, img}) => {
     return <ButtonBase className={classes.eachBestUser}>
         <Grid container direction={"row"} className={classes.tweeterParent}>
             <img src={getImage()} className={classes.twitterImg} alt={"profile"}/>
-            <Grid item container direction={"column"} style={{width: 'max-content'}} alignItems={"flex-start"}
+            <Grid item container direction={"column"}
                   className={classes.tweeterNameParent}>
                 <Typography className={classes.profName}>{name}</Typography>
                 <Typography className={classes.profId}>@{id}</Typography>
@@ -103,14 +103,14 @@ const LeftSidebar = () => {
     const classes = useStyle();
     return (
         <div className={classes.root}>
-            <Grid container direction={"row-reverse"} onClick={handleToggleMenu} style={{cursor: 'pointer'}}>
-                <img src={getImage()} style={{width: 50, height: 50, borderRadius: '50%'}} alt={"profile"}/>
-                <Grid item container direction={"column"} style={{width: 'max-content'}} className={classes.profText}>
+            <Grid container direction={"row-reverse"} onClick={handleToggleMenu} className={classes.menuContainer} >
+                <img src={getImage()}  className={classes.profile} alt={"profile"}/>
+                <Grid item container direction={"column"}  className={classes.profText}>
                     <Typography className={classes.profName}>{localStorage.getItem("name")}</Typography>
                     <Typography className={classes.profId}>{localStorage.getItem("username")}</Typography>
                 </Grid>
                 <img className={classes.settingIcon} alt={"setting-img"} src={"/images/setting.png"}/>
-                <input ref={inputRef} type={'file'} style={{display: 'none'}} onChange={handleAvatarChange}/>
+                <input ref={inputRef} type={'file'} className={classes.fileInput}  onChange={handleAvatarChange}/>
             </Grid>
             <Grid item container direction={"column"} className={classes.tweeterRoot}>
                 <Typography className={classes.tweeterTitle}>
@@ -119,12 +119,11 @@ const LeftSidebar = () => {
                 {/*map server info for set id,name,img in tweeter func*/}
                 {
                     users.slice(0, 9).map((item, index) => {
-                        return (<Link key={index} to={`/users/${item._id}/${item.name}`} style={{width: "100%"}}>
-                            <Tweeter  name={item.name} id={item.username} img={item.image}/>
-                            {index !== 8 &&
-                            <Divider style={{marginLeft: -24, marginRight: -24}}/>
-                            }
-                        </Link>)
+                        return (
+                            <Link key={index} to={`/users/${item._id}/${item.name}`} className={classes.tweeters}>
+                                <Tweeter name={item.name} id={item.username} img={item.image}/>
+                                {index !== 8 && <Divider/>}
+                            </Link>)
                     })
                 }
             </Grid>
