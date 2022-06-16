@@ -77,15 +77,17 @@ const NewTweet = ({updateTweets}) => {
             default:
                 break
         }
-    }
+    };
+
+   const tweetHandler = e => setTweet(tweetDispatch, e.target.value)
 
     const classes = useStyle();
     return (
         <div className={classes.newTweet}>
             <Grid container>
-                <img src={getImage()} style={{width: 60, height: 60, borderRadius: '50%'}} alt={"sender_photo"}/>
+                <img src={getImage()}  className={classes.tweeterProfile} alt={"sender_photo"}/>
                 <input placeholder={t("label.doTweet")} className={classnames(classes.input)}
-                       value={tweet} onChange={e => setTweet(tweetDispatch, e.target.value)}
+                       value={tweet} onChange={tweetHandler}
                 />
                 <input type={"file"} style={{display: 'none'}} ref={inputFile} onChange={onChangeImg}/>
             </Grid>
@@ -95,11 +97,11 @@ const NewTweet = ({updateTweets}) => {
                     <div style={{backgroundImage: `url(${imagePath})`}} className={classes.tweetImg}/>
                 </div>
             }
-            <Grid container direction={"row-reverse"} style={{marginTop: 16}}>
+            <Grid container direction={"row-reverse"}className={classes.buttonSection}>
                 <Button id={"newTweetBtn"} variant={"contained"} color={"primary"}
                         className={classes.newTweetBtn} onClick={newTweetClick}>{t("btn.tweet")}</Button>
                 <IconButton className={classes.newTweetImgBtn} onClick={selectImg}>
-                    <img src={"/images/gallery.png"} className={classes.newTweetImg} alt={"send"}/>
+                    <img src={"/images/gallery.png"}  alt={"gallery"}/>
                 </IconButton>
             </Grid>
         </div>
