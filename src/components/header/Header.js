@@ -15,11 +15,14 @@ const Header = ({title, icon}) => {
     const classes = useStyle();
     const layoutDispatch = useLayoutDispatch();
 
+    const handleRightToggle =()=>toggleDrawer(layoutDispatch)
+    const handleLeftToggle =()=>toggleLeftDrawer(layoutDispatch)
+
     return (
         <div className={classes.header}>
             {/*just show icon for tablet drawer*/}
             {isTabletSize && (
-                <iconButton onClick={()=>toggleDrawer(layoutDispatch)} className={classes.moreMenu} >
+                <iconButton onClick={handleRightToggle} className={classes.moreMenu} >
                 <MenuRoundedIcon/>
             </iconButton>
             )}
@@ -29,7 +32,7 @@ const Header = ({title, icon}) => {
             </Typography>
              {/*just show icon for phone  drawer*/}
             {isPhoneSize && (
-                <iconButton onClick={()=>toggleLeftDrawer(layoutDispatch)} className={classes.leftMenu}>
+                <iconButton onClick={handleLeftToggle} className={classes.leftMenu}>
                     <GroupIcon/>
                 </iconButton>
             )}
