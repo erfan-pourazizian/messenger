@@ -11,28 +11,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import {uploadUserPhoto} from "../../api/api_auth";
 import {toast} from "react-toastify";
 import {useTranslation} from "react-i18next";
-
-
-export const Tweeter = ({name, id, img}) => {
-    const classes = useStyle();
-    // show profile photo if exist
-    const getImage = () => {
-        if (img)
-            return img;
-        return "/images/person.png"
-    }
-
-    return <ButtonBase className={classes.eachBestUser}>
-        <Grid container direction={"row"} className={classes.tweeterParent}>
-            <img src={getImage()} className={classes.twitterImg} alt={"profile"}/>
-            <Grid item container direction={"column"}
-                  className={classes.tweeterNameParent}>
-                <Typography className={classes.profName}>{name}</Typography>
-                <Typography className={classes.profId}>@{id}</Typography>
-            </Grid>
-        </Grid>
-    </ButtonBase>
-}
+import {Tweeter} from "./Tweeter";
 
 
 const LeftSidebar = () => {
@@ -103,14 +82,14 @@ const LeftSidebar = () => {
     const classes = useStyle();
     return (
         <div className={classes.root}>
-            <Grid container direction={"row-reverse"} onClick={handleToggleMenu} className={classes.menuContainer} >
-                <img src={getImage()}  className={classes.profile} alt={"profile"}/>
-                <Grid item container direction={"column"}  className={classes.profText}>
+            <Grid container direction={"row-reverse"} onClick={handleToggleMenu} className={classes.menuContainer}>
+                <img src={getImage()} className={classes.profile} alt={"profile"}/>
+                <Grid item container direction={"column"} className={classes.profText}>
                     <Typography className={classes.profName}>{localStorage.getItem("name")}</Typography>
                     <Typography className={classes.profId}>{localStorage.getItem("username")}</Typography>
                 </Grid>
                 <img className={classes.settingIcon} alt={"setting-img"} src={"/images/setting.png"}/>
-                <input ref={inputRef} type={'file'} className={classes.fileInput}  onChange={handleAvatarChange}/>
+                <input ref={inputRef} type={'file'} className={classes.fileInput} onChange={handleAvatarChange}/>
             </Grid>
             <Grid item container direction={"column"} className={classes.tweeterRoot}>
                 <Typography className={classes.tweeterTitle}>
