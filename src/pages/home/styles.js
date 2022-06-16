@@ -112,8 +112,17 @@ const useStyles = makeStyles(theme => ({
         marginTop: '1rem',
         backgroundSize: 'contain',
         backgroundRepeat: 'no-repeat',
-
+    },
+    tweeterProfile:{
+        width: 60,
+        height: 60,
+        borderRadius: '50%'
+    },
+    buttonSection: {
+        marginTop: 16
     }
+
+
 }));
 
 
