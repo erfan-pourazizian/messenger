@@ -118,13 +118,10 @@ const AuthPage = () => {
     const usernameLoginHandler = e => setUsernameLogin(e.target.value)
     const passwordLoginHandler = e => setPasswordLogin(e.target.value)
 
-    const fullNameRegisterHandler = e =>  setFullNameRegister(e.target.value)
+    const fullNameRegisterHandler = e => setFullNameRegister(e.target.value)
     const usernameRegisterHandler = e => setUsernameRegister(e.target.value)
     const passwordRegisterHandler = e => setPasswordRegister(e.target.value)
     const confPasswordRegisterHandler = e => setConfPasswordRegister(e.target.value)
-
-
-
 
 
     return (
@@ -156,7 +153,9 @@ const AuthPage = () => {
                                           label={t("label.reminder")}
                         />
                         <Button id={"keyBind"} variant={"contained"} color="primary"
-                                onClick={handleLogin}>{t("btn.login")}</Button>
+                                onClick={handleLogin}>
+                            {t("btn.login")}
+                        </Button>
                     </div>
                 }
                 {tab === REG_TAB_VALUE &&
