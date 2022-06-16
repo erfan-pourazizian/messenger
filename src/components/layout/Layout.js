@@ -22,26 +22,26 @@ const Layout = (props) => {
     // responsive for phone and tablet
     const isTabletSize = useMediaQuery(theme.breakpoints.down("sm"));
     const isPhoneSize = useMediaQuery(theme.breakpoints.down("xs"))
-// set circular progress
+    // set Loading
     const [wait, setWait] = useState(true);
-// check account is active and log out if account is disable
+
     useEffect(() => {
-        getProfileRequest((isOk, data) => {
-            if (!isOk) {
-                toast.error(data);
-                localStorage.clear();
-                return history.push("/login")
-            }
-            setWait(false);
-            localStorage.setItem("name", data.name);
-            localStorage.setItem("image", data.image);
-            localStorage.setItem("username", data.username);
-            localStorage.setItem("x-auth-token", data["x-auth-token"]);
-        })
-    },
+            getProfileRequest((isOk, data) => {
+                if (!isOk) {
+                    toast.error(data);
+                    localStorage.clear();
+                    return history.push("/login")
+                }
+                setWait(false);
+                localStorage.setItem("name", data.name);
+                localStorage.setItem("image", data.image);
+                localStorage.setItem("username", data.username);
+                localStorage.setItem("x-auth-token", data["x-auth-token"]);
+            })
+        },
         // eslint-disable-next-line
         [])
-// show circular progress until get response from api
+    // show circular progress until get response from api
     if (wait)
         return <div className={classes.waitParent}>
             <CircularProgress className={"uni_m_b_small"}/>
@@ -58,9 +58,8 @@ const Layout = (props) => {
                 </div>
                 <Divider orientation={"vertical"} className={classes.divider}/>
                 {/*collapse left sidebar for phone view*/}
-                {isPhoneSize  ? <LeftSideDrawer/> :<LeftSidebar/>}
+                {isPhoneSize ? <LeftSideDrawer/> : <LeftSidebar/>}
             </div>
-        );
-};
+        )};
 
 export default Layout;
