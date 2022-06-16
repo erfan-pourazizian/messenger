@@ -6,13 +6,16 @@ const useStyles = makeStyles(theme => ({
         backgroundColor: 'white',
         display: 'flex',
         boxSizing: "border-box"
-    }, headerTitle: {
+    },
+    headerTitle: {
         fontSize: '1.2rem',
         fontWeight: 600,
         marginRight: '0.5rem'
-    }, moreMenu: {
+    },
+    moreMenu: {
         marginLeft: "0.5rem"
-    }, leftMenu: {
+    },
+    leftMenu: {
         marginRight: "auto"
     }
 }));
