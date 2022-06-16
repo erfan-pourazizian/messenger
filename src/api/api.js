@@ -8,11 +8,13 @@ export const getAxiosInstanceJsonServer = () => {
     }
   });
 };
+
 export const getAxiosInstanceAuth = () => {
   return Axios.create({
     baseURL: "https://twitterapi.liara.run/api/",
   });
 };
+
 export const getAxiosInstanceApi = () => {
   return Axios.create({
     baseURL: "https://twitterapi.liara.run/api/",
@@ -20,5 +22,6 @@ export const getAxiosInstanceApi = () => {
       'x-auth-token': localStorage.getItem("x-auth-token")
     }
   });
+
 };
 

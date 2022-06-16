@@ -205,7 +205,7 @@ a:visited {
     opacity: 1;
     border-radius: 0;
   }
-  
+
   100%{
     transform: translateY(-1000px) rotate(720deg);
     opacity: 0;
