@@ -80,9 +80,9 @@ const useStyles = makeStyles(theme => ({
             cursor: 'pointer',
             position: 'sticky',
             top: 0,
-            backgroundColor: 'white',
+            backgroundColor: '#dde6ef',
             padding: 20,
-            borderRadius: 8,
+            borderRadius: '2.5rem',
             zIndex: 1
         },
         fileInput: {
