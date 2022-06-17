@@ -104,7 +104,7 @@ const LeftSidebar = () => {
                 <Chip
                     id={'leftChip'}
                     className={classes.chip}
-                    label="برای مشاهده کامنت هر کاربر کلیک کنید"
+                    label={t("label.hashtagGuide")}
                     onDelete={handleDelete}
                     color="primary"/>
                 {/*map server info for set id,name,img in tweeter func*/}

@@ -51,7 +51,7 @@ const RightSidebar = () => {
             <Chip
                 id={'chip'}
                 className={classes.chip}
-                label="برای مشاهده هر هشتگ کلیک کنید"
+                label={t("label.tweeterGuide")}
                 onDelete={handleDelete}
                 color="primary"/>
             <Grid container direction={"column"} alignItems={"center"}>

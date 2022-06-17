@@ -32,5 +32,7 @@
   "label.fullName": "نام کامل",
   "label.doTweet": "توییت کن ...",
   "label.or": "شبکه های اجتماعی",
-  "label.reminder": "مرا بخاطر بسپار"
+  "label.reminder": "مرا بخاطر بسپار",
+  "label.hashtagGuide": "برای مشاهده کامنت هر کاربر کلیک کنید",
+  "label.tweeterGuide": "برای مشاهده کامنت هر کاربر کلیک کنید"
 }

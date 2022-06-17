@@ -32,5 +32,8 @@
   "label.fullName": "full name",
   "label.doTweet": "...tweet",
   "label.or": "or use",
-  "label.reminder": "Remember me"
+  "label.reminder": "Remember me",
+  "label.hashtagGuide": "Click to view each user's comment",
+  "label.tweeterGuide": "Click to view each user's comment"
+
 }
