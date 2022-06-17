@@ -7,6 +7,8 @@ const useStyles = makeStyles(theme => ({
             padding: '1.5rem 2rem',
             overflow: "hidden",
             fontSize: '17px',
+            scrollbarWidth: 'none',
+            overflowY: 'auto',
             [theme.breakpoints.down("sm")]: {
                 width: "35%",
             },
@@ -76,6 +78,12 @@ const useStyles = makeStyles(theme => ({
         },
         menuContainer: {
             cursor: 'pointer',
+            position: 'sticky',
+            top: 0,
+            backgroundColor: 'white',
+            padding: 20,
+            borderRadius: 8,
+            zIndex: 1
         },
         fileInput: {
             display: 'none'

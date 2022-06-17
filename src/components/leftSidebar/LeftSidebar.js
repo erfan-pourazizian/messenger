@@ -109,7 +109,7 @@ const LeftSidebar = () => {
                     color="primary"/>
                 {/*map server info for set id,name,img in tweeter func*/}
                 {
-                    users.slice(0, 9).map((item, index) => {
+                    users.slice(0, 20).map((item, index) => {
                         return (
                             <Link key={index} to={`/users/${item._id}/${item.name}`} className={classes.tweeters}>
                                 <Tweeter name={item.name} id={item.username} img={item.image}/>
