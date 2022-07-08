@@ -1,7 +1,7 @@
 import React from 'react'
 import {Drawer} from "@material-ui/core";
 import RightSidebar from "../rightSidebar/RightSidebar";
-import {toggleDrawer, toggleLeftDrawer, useLayoutDispatch, useLayoutState} from "../../context/LayoutContext";
+import {toggleDrawer, useLayoutDispatch, useLayoutState} from "../../context/LayoutContext";
 
 
 const TwitterDrawer = () => {
