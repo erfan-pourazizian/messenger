@@ -3,7 +3,6 @@ import useStyle from './styles'
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
-import ButtonBase from "@material-ui/core/ButtonBase";
 import {Link} from "react-router-dom";
 import {getUsers} from "../../api/api_tweet";
 import Menu from "@material-ui/core/Menu";
