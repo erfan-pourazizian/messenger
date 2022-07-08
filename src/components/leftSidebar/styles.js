@@ -39,8 +39,8 @@ const useStyles = makeStyles(theme => ({
             direction: "ltr",
         },
         settingIcon: {
-            width: '16px',
-            height: '16px',
+            width: '24px',
+            height: '24px',
             marginLeft: '10px',
             marginTop: '3px'
         },
