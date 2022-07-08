@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import useStyles from './styles'
@@ -10,7 +10,6 @@ import {toast} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import {loginApi, registerApi} from "../../api/api_auth";
 import {useTranslation} from "react-i18next";
-import Divider from "@material-ui/core/Divider";
 import {Checkbox, FormControlLabel} from "@material-ui/core";
 import BackGround from "../liveBackground/backGround";
 import SocialmediaSection from "./SocialmediaSection";
@@ -115,6 +114,13 @@ const AuthPage = () => {
         }
     };
 
+    const loginInputRef = useRef(null);
+
+    useEffect(()=>{
+        loginInputRef.current.click();
+    }, []);
+
+
     const usernameLoginHandler = e => setUsernameLogin(e.target.value)
     const passwordLoginHandler = e => setPasswordLogin(e.target.value)
 
@@ -141,7 +147,7 @@ const AuthPage = () => {
                     <div className={classes.containerInput}>
                         <Typography>{t("label.username")}</Typography>
                         <Input className={"uni_m_b_small"}
-                               value={usernameLogin} onChange={usernameLoginHandler}
+                               ref={loginInputRef}  value={usernameLogin} onChange={usernameLoginHandler}
                         >
                         </Input>
                         <Typography>{t("label.password")}</Typography>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import useStyle from '../styles'
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
@@ -79,6 +79,12 @@ const NewTweet = ({updateTweets}) => {
         }
     };
 
+    const tweetInputRef = useRef(null);
+
+    useEffect(()=>{
+        tweetInputRef.current.focus();
+    }, []);
+
    const tweetHandler = e => setTweet(tweetDispatch, e.target.value)
 
     const classes = useStyle();
@@ -86,7 +92,7 @@ const NewTweet = ({updateTweets}) => {
         <div className={classes.newTweet}>
             <Grid container>
                 <img src={getImage()}  className={classes.tweeterProfile} alt={"sender_photo"}/>
-                <input placeholder={t("label.doTweet")} className={classnames(classes.input)}
+                <input placeholder={t("label.doTweet")} ref={tweetInputRef} className={classnames(classes.input)}
                        value={tweet} onChange={tweetHandler}
                 />
                 <input type={"file"} style={{display: 'none'}} ref={inputFile} onChange={onChangeImg}/>
