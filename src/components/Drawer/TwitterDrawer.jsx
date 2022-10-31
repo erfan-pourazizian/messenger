@@ -1,4 +1,3 @@
-import React from 'react'
 import {Drawer} from "@material-ui/core";
 import RightSidebar from "../rightSidebar/RightSidebar";
 import {toggleDrawer, useLayoutDispatch, useLayoutState} from "../../context/LayoutContext";

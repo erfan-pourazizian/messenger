@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 import useStyle from './styles'
 import RightSidebar from "../rightSidebar/RightSidebar";
 import Divider from "@material-ui/core/Divider";
