@@ -4,13 +4,13 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import { Link } from "react-router-dom";
-import { getUsers } from "../../api/api_tweet";
+import { getUsers } from "../../api/api_messages";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import { uploadUserPhoto } from "../../api/api_auth";
 import { toast } from "react-toastify";
 import { useTranslation } from "react-i18next";
-import { Tweeter } from "./Tweeter";
+import { Messenger } from "./Messenger";
 import { Chip } from "@material-ui/core";
 
 
@@ -23,7 +23,7 @@ const LeftSidebar = () => {
     const [anchorMenu, setAnchorMenu] = useState();
     const inputRef = useRef();
 
-    // get left side users(best tweeters)
+    // get left side users(best sub)
     useEffect(() => {
         getUsers((isOk, data) => {
             if (!isOk)
@@ -96,10 +96,10 @@ const LeftSidebar = () => {
                 <img className={classes.settingIcon} alt={"setting-img"} src={"/images/setting.png"} />
                 <input ref={inputRef} type={'file'} className={classes.fileInput} onChange={handleAvatarChange} />
             </Grid>
-            <Grid item container direction={"column"} className={classes.tweeterRoot}>
+            <Grid item container direction={"column"} className={classes.messengerRoot}>
                 <div className={classes.bestSub}>
                     <img src="/images/number-one.png" className={classes.bestSub_img} alt="number-1" />
-                    <Typography className={classes.tweeterTitle}>
+                    <Typography className={classes.messengerTitle}>
                         {t("userListTitle")}
                     </Typography>
                 </div>
@@ -109,12 +109,12 @@ const LeftSidebar = () => {
                     label={t("label.hashtagGuide")}
                     onDelete={handleDelete}
                     color="primary" />
-                {/*map server info for set id,name,img in tweeter func*/}
+                {/*map server info for set id,name,img in messenger func*/}
                 {
                     users.slice(0, 20).map((item, index) => {
                         return (
-                            <Link key={index} to={`/users/${item._id}/${item.name}`} className={classes.tweeters}>
-                                <Tweeter name={item.name} id={item.username} img={item.image} />
+                            <Link key={index} to={`/users/${item._id}/${item.name}`} className={classes.messages}>
+                                <Messenger name={item.name} id={item.username} img={item.image} />
                                 {index !== 8 && <Divider />}
                             </Link>)
                     })

@@ -4,48 +4,48 @@ import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import classnames from 'classnames'
-import {newTweetRequest} from "../../../api/api_tweet";
+import {newMessageRequest} from "../../../api/api_messages";
 import {toast} from "react-toastify";
 import {
-    setTweetText as setTweet,
+    setMessageText as setMessage,
     updateHashTagList,
-    useTweetDispatch,
-    useTweetState
-} from "../../../context/TweetContext";
+    useMessageDispatch,
+    useMessageState
+} from "../../../context/MessageContext";
 import {useTranslation} from "react-i18next";
 
-const NewTweet = ({updateTweets}) => {
+const NewMessage = ({updateMessages}) => {
 
     const inputFile = React.useRef();
 
     const {t} = useTranslation();
-    const {tweetText: tweet} = useTweetState();
-    const tweetDispatch = useTweetDispatch();
+    const {messageText: message} = useMessageState();
+    const messageDispatch = useMessageDispatch();
     const [imageFile, setImageFile] = React.useState();
     const [imagePath, setImagePath] = React.useState();
 
-// send tweet
-    const newTweetClick = () => {
-        const tweetText = tweet;
-        if (!tweetText)
+// send message
+    const newMessageClick = () => {
+        const messageText = message;
+        if (!messageText)
             return;
         const formData = new FormData();
-        formData.append("text", tweetText);
+        formData.append("text", messageText);
         if (imageFile)
             formData.append("image", imageFile);
-        newTweetRequest(formData, (isOk, data) => {
+        newMessageRequest(formData, (isOk, data) => {
             if (!isOk)
                 return toast.error(data);
-            toast.success(t("success.newTweet"));
-            updateTweets();
-            setTweet(tweetDispatch, "");
+            toast.success(t("success.newMessage"));
+            updateMessages();
+            setMessage(messageDispatch, "");
             setImagePath();
             setImageFile();
-            if (tweetText.includes("#"))
-                updateHashTagList(tweetDispatch);
+            if (messageText.includes("#"))
+                updateHashTagList(messageDispatch);
         })
     };
-// get profile for tweet
+// get profile for message
     const getImage = () => {
         if (localStorage.getItem("image") && localStorage.getItem("image") !== 'undefined')
             return localStorage.getItem("image");
@@ -67,46 +67,46 @@ const NewTweet = ({updateTweets}) => {
         inputFile.current.click();
     };
     // add enter keybind for newPost
-    const newTweetFinder = () => document.getElementById("newTweetBtn").click()
+    const newMessageFinder = () => document.getElementById("newMessageBtn").click()
 
     document.onkeydown = function (ev) {
         ev = ev || window.event;
         switch (ev.which || ev.keyCode) {
-            case 13 : newTweetFinder()
+            case 13 : newMessageFinder()
                 break;
             default:
                 break
         }
     };
 
-    const tweetInputRef = useRef(null);
+    const messageInputRef = useRef(null);
 
     useEffect(()=>{
-        tweetInputRef.current.focus();
+        messageInputRef.current.focus();
     }, []);
 
-   const tweetHandler = e => setTweet(tweetDispatch, e.target.value)
+   const messageHandler = e => setMessage(messageDispatch, e.target.value)
 
     const classes = useStyle();
     return (
-        <div className={classes.newTweet}>
+        <div className={classes.newMessage}>
             <Grid container>
-                <img src={getImage()}  className={classes.tweeterProfile} alt={"sender_photo"}/>
-                <input placeholder={t("label.doTweet")} ref={tweetInputRef} className={classnames(classes.input)}
-                       value={tweet} onChange={tweetHandler}
+                <img src={getImage()}  className={classes.messengerProfile} alt={"sender_photo"}/>
+                <input placeholder={t("label.doMessage")} ref={messageInputRef} className={classnames(classes.input)}
+                       value={message} onChange={messageHandler}
                 />
                 <input type={"file"} style={{display: 'none'}} ref={inputFile} onChange={onChangeImg}/>
             </Grid>
             {
                 imagePath &&
                 <div>
-                    <div style={{backgroundImage: `url(${imagePath})`}} className={classes.tweetImg}/>
+                    <div style={{backgroundImage: `url(${imagePath})`}} className={classes.messageImg}/>
                 </div>
             }
             <Grid container direction={"row-reverse"}className={classes.buttonSection}>
-                <Button id={"newTweetBtn"} variant={"contained"} color={"primary"}
-                        className={classes.newTweetBtn} onClick={newTweetClick}>{t("btn.tweet")}</Button>
-                <IconButton className={classes.newTweetImgBtn} onClick={selectImg}>
+                <Button id={"newMessageBtn"} variant={"contained"} color={"primary"}
+                        className={classes.newMessageBtn} onClick={newMessageClick}>{t("btn.message")}</Button>
+                <IconButton className={classes.newMessageImgBtn} onClick={selectImg}>
                     <img src={"/images/gallery.png"}  alt={"gallery"}/>
                 </IconButton>
             </Grid>
@@ -114,4 +114,4 @@ const NewTweet = ({updateTweets}) => {
     );
 };
 
-export default NewTweet;
+export default NewMessage;

@@ -3,7 +3,7 @@ import RightSidebar from "../rightSidebar/RightSidebar";
 import {toggleDrawer, useLayoutDispatch, useLayoutState} from "../../context/LayoutContext";
 
 
-const TwitterDrawer = () => {
+const MessengerDrawer = () => {
     const {drawerOpen} = useLayoutState()
     const layoutDispatch = useLayoutDispatch()
 
@@ -17,4 +17,4 @@ const TwitterDrawer = () => {
         </Drawer>
     )}
 
-export default TwitterDrawer
+export default MessengerDrawer

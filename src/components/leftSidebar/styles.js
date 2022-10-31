@@ -24,7 +24,7 @@ const useStyles = makeStyles(theme => ({
         eachBestUser: {
             width: '100%'
         },
-        tweeterNameParent: {
+        messengerNameParent: {
             marginRight: '0.5rem',
             width: 'max-content',
             alignItems: "flex-start"
@@ -44,31 +44,31 @@ const useStyles = makeStyles(theme => ({
             marginLeft: '7px',
             marginTop: '3px'
         },
-        tweeterRoot: {
+        messengerRoot: {
             background: "#dde6ef",
             marginTop: "3rem",
             borderRadius: "2.5rem",
             padding: "11px 24px",
             boxShadow: '0 8px 32px 0 rgb(31 38 135 / 17%)'
         },
-        tweeterTitle: {
+        messengerTitle: {
             fontSize: '20px !important',
             fontWeight: "600 !important",
             marginBottom: '11px'
         },
-        tweeterParent: {
+        messengerParent: {
             padding: '10px 0'
         },
         menu: {
             backgroundColor: 'white',
             padding: '1rem',
         },
-        twitterImg: {
+        messageImg: {
             width: 50,
             height: 50,
             borderRadius: '50%'
         },
-        tweeters: {
+        messages: {
             width: "100%",
         },
         profile: {

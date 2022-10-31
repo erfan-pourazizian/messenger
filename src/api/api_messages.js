@@ -1,8 +1,8 @@
 import {getAxiosInstanceApi } from "./api";
 
-// get tweets
+// get messages
 
-export const getAllTweets = (callback) => {
+export const getAllMessages = (callback) => {
   getAxiosInstanceApi().post("getAllTweet")
     .then(response => {
       const data = response.data;
@@ -13,9 +13,9 @@ export const getAllTweets = (callback) => {
   })
 };
 
-// sort tweet with hashtag
+// sort message with hashtag
 
-export const getTweetsByHashTagRequest = (hashTag ,callback) => {
+export const getMessagesByHashTagRequest = (hashTag ,callback) => {
   getAxiosInstanceApi().post("getAllTweet" , {hashTag})
     .then(response => {
       const data = response.data;
@@ -26,9 +26,9 @@ export const getTweetsByHashTagRequest = (hashTag ,callback) => {
   })
 };
 
-// sort tweet with user
+// sort message with user
 
-export const getTweetsByUserRequest = (user ,callback) => {
+export const getMessagesByUserRequest = (user ,callback) => {
   getAxiosInstanceApi().post("getAllTweet" , {user})
     .then(response => {
       const data = response.data;
@@ -65,9 +65,9 @@ export const getUsers = (callback) => {
   })
 };
 
-// post tweet
+// post message
 
-export const newTweetRequest = (data, callback) => {
+export const newMessageRequest = (data, callback) => {
   getAxiosInstanceApi().post("newTweet", data)
     .then(response => {
       const data = response.data;
@@ -80,7 +80,7 @@ export const newTweetRequest = (data, callback) => {
 
 // get likes that submitted in server
 
-export const likeTweetRequest = (id, callback) => {
+export const likeMessageRequest = (id, callback) => {
   getAxiosInstanceApi().get("likeTweet/"+id)
     .then(response => {
       const data = response.data;

@@ -4,8 +4,8 @@ import useStyle from './styles'
 import Grid from "@material-ui/core/Grid";
 import ButtonBase from "@material-ui/core/ButtonBase";
 import {Link} from "react-router-dom";
-import {getHashTags} from "../../api/api_tweet";
-import {setHashTagList, useTweetDispatch, useTweetState} from "../../context/TweetContext";
+import {getHashTags} from "../../api/api_messages";
+import {setHashTagList, useMessageDispatch, useMessageState} from "../../context/MessageContext";
 import {toast} from "react-toastify";
 import {useTranslation} from "react-i18next";
 import {Chip} from "@material-ui/core";
@@ -14,14 +14,14 @@ import {Chip} from "@material-ui/core";
 const RightSidebar = () => {
     const {t} = useTranslation();
     const classes = useStyle();
-    const {hashTags} = useTweetState();
-    const tweetDispatch = useTweetDispatch();
+    const {hashTags} = useMessageState();
+    const messageDispatch = useMessageDispatch();
     //  fetch hashtags
     useEffect(() => {
             getHashTags((isOk, data) => {
                 if (!isOk)
                     return toast.error(t("error.hashTagFetch"));
-                setHashTagList(tweetDispatch, data);
+                setHashTagList(messageDispatch, data);
             })
         },
         // eslint-disable-next-line
@@ -51,7 +51,7 @@ const RightSidebar = () => {
             <Chip
                 id={'chip'}
                 className={classes.chip}
-                label={t("label.tweeterGuide")}
+                label={t("label.messengerGuide")}
                 onDelete={handleDelete}
                 color="primary"/>
             <Grid container direction={"column"} alignItems={"center"}>

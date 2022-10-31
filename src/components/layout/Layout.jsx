@@ -10,7 +10,7 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 import Typography from "@material-ui/core/Typography";
 import {useTranslation} from "react-i18next";
 import {useMediaQuery, useTheme} from "@material-ui/core";
-import TwitterDrawer from "../Drawer/TwitterDrawer";
+import MessengerDrawer from "../Drawer/MessengerDrawer";
 import LeftSideDrawer from "../Drawer/LeftSideDrawer";
 
 
@@ -51,7 +51,7 @@ const Layout = (props) => {
         return (
             <div className={classes.root}>
                 {/*collapse  right sidebar for tablet view*/}
-                {isTabletSize ? <TwitterDrawer/> : <RightSidebar/>}
+                {isTabletSize ? <MessengerDrawer/> : <RightSidebar/>}
                 <Divider orientation={"vertical"} className={classes.divider}/>
                 <div className={classes.content}>
                     {props.children}

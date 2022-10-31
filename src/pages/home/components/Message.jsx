@@ -2,8 +2,8 @@ import Grid from "@material-ui/core/Grid";
 import IconButton from "@material-ui/core/IconButton";
 import useStyle from '../styles'
 import Typography from "@material-ui/core/Typography";
-import { likeTweet, setTweetText, useTweetDispatch } from "../../../context/TweetContext";
-import { likeTweetRequest } from "../../../api/api_tweet";
+import { likeMessage, setMessageText, useMessageDispatch } from "../../../context/MessageContext";
+import { likeMessageRequest } from "../../../api/api_messages";
 import { toast } from "react-toastify";
 import { Favorite, FavoriteBorder } from "@material-ui/icons";
 import { Checkbox, FormControlLabel } from "@material-ui/core";
@@ -12,11 +12,11 @@ import Snackbar from '@mui/material/Snackbar';
 import Slide from '@mui/material/Slide';
 
 
-const Tweet = ({ data }) => {
+const Message = ({ data }) => {
 
-    const tweetDispatch = useTweetDispatch();
+    const messageDispatch = useMessageDispatch();
     //  make after # text blue
-    const renderTweet = (text) => {
+    const renderMessage = (text) => {
         return { __html: text.replace(/#\S+/g, "<a href='/tags/$&' style='color:cornflowerblue'>$&</a>") };
     };
     // set profile if user have it
@@ -25,12 +25,12 @@ const Tweet = ({ data }) => {
             return data.user.image;
         else return "/images/person.png";
     };
-    // handle tweets like
+    // handle messages like
     const handleLike = () => {
-        likeTweetRequest(data._id, (isOk, data) => {
+        likeMessageRequest(data._id, (isOk, data) => {
             if (!isOk)
                 return toast.error(data);
-            likeTweet(tweetDispatch, data._id);
+            likeMessage(messageDispatch, data._id);
         });
     }
 
@@ -42,9 +42,9 @@ const Tweet = ({ data }) => {
     const [state, setState] = useState({
         open: false,
     });
-    // retweet button setState
-    const retweetClick = () => {
-        setTweetText(tweetDispatch, data.text);
+    // copy button setState
+    const copyClick = () => {
+        setMessageText(messageDispatch, data.text);
         setState({
             open: true,
         });
@@ -59,25 +59,25 @@ const Tweet = ({ data }) => {
 
     const classes = useStyle();
     return (
-        <div className={classes.tweetItem}>
+        <div className={classes.messageItem}>
             <Grid container>
                 <img className={classes.profile} src={getImage()} alt={"sender_photo"} />
-                <Grid item container className={classes.tweetContainer} direction={"column"} >
+                <Grid item container className={classes.messageContainer} direction={"column"} >
                     <Grid item container>
-                        <Typography className={classes.tweetItemName}>{data.user.name}</Typography>
-                        <Typography className={classes.tweetItemId}>{data.user.username}@</Typography>
+                        <Typography className={classes.messageItemName}>{data.user.name}</Typography>
+                        <Typography className={classes.messageItemId}>{data.user.username}@</Typography>
                     </Grid>
-                    <Typography dangerouslySetInnerHTML={renderTweet(data.text)} className={classes.tweetText}
+                    <Typography dangerouslySetInnerHTML={renderMessage(data.text)} className={classes.messageText}
                         component={"p"} />
                     {
                         data.image &&
-                        <img src={data.image} className={classes.tweetImg} alt={"tweetPhoto"}></img>
+                        <img src={data.image} className={classes.messageImg} alt={"messagePhoto"}></img>
                     }
                 </Grid>
             </Grid>
-            <Grid container className={classes.retweetGrid} direction={"row-reverse"}>
-                <IconButton className={classes.newTweetImgBtn} onClick={retweetClick}>
-                    <img src={"/images/copy.png"} className={classes.newTweetImg} alt={"retweet"} />
+            <Grid container className={classes.copyGrid} direction={"row-reverse"}>
+                <IconButton className={classes.newMessageImgBtn} onClick={copyClick}>
+                    <img src={"/images/copy.png"} className={classes.newMessageImg} alt={"copy"} />
                 </IconButton>
                 <Snackbar
                     open={state.open}
@@ -87,9 +87,9 @@ const Tweet = ({ data }) => {
                     autoHideDuration={5000}
                     className={classes.Snackbar}
                 />
-                <FormControlLabel className={classes.newTweetLike} control={<Checkbox
+                <FormControlLabel className={classes.newMessageLike} control={<Checkbox
                     onClick={handleLike}
-                    icon={<FavoriteBorder className={classes.newTweetLike_icon} />}
+                    icon={<FavoriteBorder className={classes.newMessageLike_icon} />}
                     checkedIcon={<Favorite />} />} />
                 <Typography className={classes.likeCount}>{data.likes}</Typography>
             </Grid>
@@ -97,4 +97,4 @@ const Tweet = ({ data }) => {
     );
 };
 
-export default Tweet;
+export default Message;

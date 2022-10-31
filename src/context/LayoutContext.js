@@ -35,7 +35,7 @@ function LayoutProvider({children}) {
 function useLayoutState() {
   const context = React.useContext(LayoutStateContext);
   if (context === undefined) {
-    throw new Error("useTweetState must be used within a TweetProvider");
+    throw new Error("useMessageState must be used within a MessageProvider");
   }
   return context;
 }
@@ -43,7 +43,7 @@ function useLayoutState() {
 function useLayoutDispatch() {
   const context = React.useContext(LayoutDispatchContext);
   if (context === undefined) {
-    throw new Error("useTweetDispatch must be used within a TweetProvider");
+    throw new Error("useMessageDispatch must be used within a MessageProvider");
   }
   return context;
 }

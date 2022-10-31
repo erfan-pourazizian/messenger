@@ -2,10 +2,10 @@ import {useEffect} from 'react';
 import useStyle from './styles'
 import Header from "../../components/header/Header";
 import Divider from "@material-ui/core/Divider";
-import NewTweet from "./components/NewTweet";
-import TweetList from "./components/TweetList";
-import {getAllTweets} from "../../api/api_tweet";
-import {setTweetList, useTweetDispatch, useTweetState} from "../../context/TweetContext";
+import NewMessage from "./components/NewMessage";
+import MessageList from "./components/MessageList";
+import {getAllMessages} from "../../api/api_messages";
+import {setMessageList, useMessageDispatch, useMessageState} from "../../context/MessageContext";
 import {useTranslation} from "react-i18next";
 import {toast} from "react-toastify";
 
@@ -13,20 +13,20 @@ const Home = () => {
   const classes = useStyle();
   const {t} = useTranslation();
 // context
-  const tweetDispatch = useTweetDispatch();
-  const {tweetList : tweets} = useTweetState();
+  const messageDispatch = useMessageDispatch();
+  const {messageList : messages} = useMessageState();
 
   useEffect(() => {
-    updateTweets();
+    updateMessages();
   },
        // eslint-disable-next-line
       []);
-// update tweets
-  const updateTweets = () => {
-    getAllTweets((isOk, data) => {
+// update messages
+  const updateMessages = () => {
+    getAllMessages((isOk, data) => {
       if (!isOk)
-        return toast.error(t("error.tweetFetch"));
-      setTweetList(tweetDispatch,data);
+        return toast.error(t("error.messageFetch"));
+      setMessageList(messageDispatch,data);
     })
   }
 
@@ -34,8 +34,8 @@ const Home = () => {
     <div className={classes.root}>
       <Header title={t("home")} />
       <Divider className={classes.divider}/>
-      <NewTweet updateTweets={updateTweets}/>
-      <TweetList data={tweets}/>
+      <NewMessage updateMessages={updateMessages}/>
+      <MessageList data={messages}/>
     </div>
   );
 };

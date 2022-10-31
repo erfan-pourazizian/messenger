@@ -2,22 +2,22 @@ import {useEffect} from 'react';
 import useStyle from "../home/styles";
 import Header from "../../components/header/Header";
 import Divider from "@material-ui/core/Divider";
-import TweetList from "../home/components/TweetList";
-import {getTweetsByHashTagRequest} from "../../api/api_tweet";
+import MessageList from "../home/components/MessageList";
+import {getMessagesByHashTagRequest} from "../../api/api_messages";
 import {toast} from "react-toastify";
-import {setTweetList, useTweetDispatch, useTweetState} from "../../context/TweetContext";
+import {setMessageList, useMessageDispatch, useMessageState} from "../../context/MessageContext";
 import {useLocation} from 'react-router-dom';
 
-const TweetByHashTag = (props) => {
+const MessageByHashTag = (props) => {
 
   const location = useLocation();
-  const {tweetList} = useTweetState();
-  const tweetDispatch = useTweetDispatch();
+  const {messageList} = useMessageState();
+  const messageDispatch = useMessageDispatch();
   useEffect(() => {
-    getTweetsByHashTagRequest(props.match.params.hashtag, (isOk, data) => {
+    getMessagesByHashTagRequest(props.match.params.hashtag, (isOk, data) => {
       if (!isOk)
         return toast.error(data);
-      setTweetList(tweetDispatch, data);
+      setMessageList(messageDispatch, data);
     })
   },
        // eslint-disable-next-line
@@ -28,9 +28,9 @@ const TweetByHashTag = (props) => {
     <div className={classes.root}>
       <Header title={props.match.params.hashtag} icon={<img src={"/images/hashtag.png"} alt={"hashtag_icon"}/>}/>
       <Divider className={classes.divider}/>
-      <TweetList  data={tweetList}/>
+      <MessageList  data={messageList}/>
     </div>
   );
 };
 
-export default TweetByHashTag;
+export default MessageByHashTag;

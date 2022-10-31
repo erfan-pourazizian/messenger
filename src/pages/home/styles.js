@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#7EBAFF",
     filter: "opacity(0.18)",
   },
-  newTweet: {
+  newMessage: {
     padding: 18,
     display: "flex",
     flexDirection: "column",
@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "10px",
     border: "1px solid rgba(255, 255, 255, 0.18)",
   },
-  tweetItem: {
+  messageItem: {
     padding: 18,
     backgroundColor: "#F7F7F7",
     display: "flex",
@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
     width: 60,
     borderRadius: "50%",
   },
-  tweetContainer: {
+  messageContainer: {
     flex: 1,
     marginRight: "1rem",
   },
@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
     caretColor: "cornflowerblue",
     background: "transparent",
   },
-  newTweetBtn: {
+  newMessageBtn: {
     color: "white !important",
     borderRadius: "1rem !important",
     minHeight: "30px !important",
@@ -66,25 +66,25 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: "1rem !important",
     minWidth: "5rem !important",
   },
-  retweetGrid: {
+  copyGrid: {
     marginTop: 16,
     alignItems: "center",
   },
-  newTweetImgBtn: {
+  newMessageImgBtn: {
     padding: "0.2rem !important",
     marginLeft: "1rem",
     marginRight: "-1rem",
     width: "26px",
     height: "26px",
   },
-  newTweetLike: {
+  newMessageLike: {
     padding: "0.2rem !important",
     marginLeft: "1rem !important",
     width: "40px",
     height: "32px",
     overflow: "hidden",
   },
-  newTweetLike_icon: {
+  newMessageLike_icon: {
 color: '#f50057'
   },
   likeCount: {
@@ -92,20 +92,20 @@ color: '#f50057'
     color: theme.palette.text.hint,
     marginLeft: "-1rem",
   },
-  tweetItemName: {
+  messageItemName: {
     fontSize: "1.2rem",
     marginTop: "0.5rem",
   },
-  tweetItemId: {
+  messageItemId: {
     fontSize: "0.9rem",
     color: theme.palette.text.hint,
     marginRight: "0.5rem",
     marginTop: "0.75rem",
   },
-  tweetText: {
+  messageText: {
     fontSize: "1rem",
   },
-  tweetImg: {
+  messageImg: {
     width: "100%",
     height: "9rem",
     marginTop: "1rem",
@@ -113,7 +113,7 @@ color: '#f50057'
     backgroundPositionX: "center",
     backgroundRepeat: "no-repeat",
   },
-  tweeterProfile: {
+  messengerProfile: {
     width: 60,
     height: 60,
     borderRadius: "50%",
