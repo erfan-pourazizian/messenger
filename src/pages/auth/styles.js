@@ -8,7 +8,9 @@ const useStyles = makeStyles(theme => ({
     container: {
         background: "white",
         width: "30rem",
-        margin: "6rem auto",
+        marginTop : "6rem",
+        marginRight: "auto",
+        marginLeft: "auto",
         display: "flex",
         flexDirection: "column",
         [theme.breakpoints.down("xs")]: {
