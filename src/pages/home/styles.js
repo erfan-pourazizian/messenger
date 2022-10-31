@@ -121,6 +121,9 @@ color: '#f50057'
   buttonSection: {
     marginTop: 16,
   },
+  Snackbar: {
+    overflow: 'hidden'
+  }
 }));
 
 export default useStyles;
