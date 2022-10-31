@@ -7,7 +7,7 @@ const Theme = createTheme({
   palette: {
     primary: {
       main: colorPrimary,
-      light: tinyColor(colorPrimary).lighten().toHexString()
+      light: tinyColor(colorPrimary).lighten().toHexString(),
     }
   },
   overrides: {

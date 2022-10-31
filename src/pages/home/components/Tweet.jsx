@@ -55,11 +55,12 @@ const Tweet = ({data}) => {
             </Grid>
             <Grid container className={classes.retweetGrid} direction={"row-reverse"}>
                 <IconButton className={classes.newTweetImgBtn} onClick={retweetClick}>
-                    <img src={"/images/retweet.png"} className={classes.newTweetImg} alt={"retweet"}/>
+                    <img src={"/images/copy.png"} className={classes.newTweetImg} alt={"retweet"}/>
                 </IconButton>
                 <FormControlLabel className={classes.newTweetLike} control={<Checkbox
                 onClick={handleLike}
-                icon={<FavoriteBorder/>}
+                icon={<FavoriteBorder className={classes.newTweetLike_icon}/>}
+                
                 checkedIcon={<Favorite/>}/>}/>
                 <Typography className={classes.likeCount}>{data.likes}</Typography>
             </Grid>

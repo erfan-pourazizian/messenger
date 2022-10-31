@@ -5,7 +5,7 @@ import MenuRoundedIcon from "@material-ui/icons/MenuRounded";
 import GroupIcon from '@material-ui/icons/Group';
 import {toggleDrawer, toggleLeftDrawer, useLayoutDispatch} from "../../context/LayoutContext";
 
-const Header = ({title, icon}) => {
+const Header = ({title}) => {
     const theme = useTheme()
     // responsive for phone and tablet
     const isTabletSize = useMediaQuery(theme.breakpoints.down("sm"))
@@ -25,7 +25,7 @@ const Header = ({title, icon}) => {
                 <MenuRoundedIcon/>
             </iconButton>
             )}
-            {icon}
+            <img src="/images/home.png" alt="home" />
             <Typography className={classes.headerTitle}>
                 {title}
             </Typography>

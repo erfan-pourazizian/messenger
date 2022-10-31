@@ -21,7 +21,8 @@ const useStyles = makeStyles(theme => ({
 
     logo: {
         alignSelf: 'center',
-        width: '80px'
+        width: '65px',
+        marginTop: '5px'
     },
     tab: {
         flex: 1,

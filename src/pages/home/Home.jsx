@@ -4,7 +4,6 @@ import Header from "../../components/header/Header";
 import Divider from "@material-ui/core/Divider";
 import NewTweet from "./components/NewTweet";
 import TweetList from "./components/TweetList";
-import {Home as HomeIcon} from "@material-ui/icons";
 import {getAllTweets} from "../../api/api_tweet";
 import {setTweetList, useTweetDispatch, useTweetState} from "../../context/TweetContext";
 import {useTranslation} from "react-i18next";
@@ -33,7 +32,7 @@ const Home = () => {
 
   return (
     <div className={classes.root}>
-      <Header title={t("home")} icon={<HomeIcon/>}/>
+      <Header title={t("home")} />
       <Divider className={classes.divider}/>
       <NewTweet updateTweets={updateTweets}/>
       <TweetList data={tweets}/>

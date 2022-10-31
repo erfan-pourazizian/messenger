@@ -11,7 +11,7 @@ const SocialmediaSection = () => {
             <Divider variant={"middle"} className={classes.divider}/>
             <Typography className={classes.dividerText}> {t("label.or")}</Typography>
             <div className={classes.iconsParent}>
-                <a href={"https://www.instagram.com/mr.pourazizan/"}>
+                <a href={"https://www.instagram.com/dev.enzo/"}>
                     <img className={classes.icon} alt={"instagram-Icon"} src={"/images/instagram.png"}/>
                 </a>
                 <a href = {"mailto: erfan8202@gmail.com"}>
@@ -20,7 +20,7 @@ const SocialmediaSection = () => {
                 <a href={"https://ir.linkedin.com/in/erfan-pourazizian"}>
                     <img className={classes.icon} alt={"linkedin-Icon"} src={"/images/linkedin.png"}/>
                 </a>
-                <a href={"https://github.com/Enzo8202"}>
+                <a href={"https://github.com/erfan-pourazizian"}>
                     <img className={classes.icon} alt={"github-Icon"} src={"/images/github.png"}/>
                 </a>
             </div>

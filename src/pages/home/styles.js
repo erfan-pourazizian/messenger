@@ -28,17 +28,14 @@ const useStyles = makeStyles((theme) => ({
   },
   tweetItem: {
     padding: 18,
-    background: "rgb(168, 192, 255)",
+    backgroundColor: "#F7F7F7",
     display: "flex",
     flexDirection: "column",
-    boxShadow: "0 8px 32px 0 rgb(31 38 135 / 37%)",
+    boxShadow: "0 1px 1px 0 rgb(31 38 135 / 37%)",
     borderRadius: 7,
     margin: "1rem 1rem 1rem 1rem",
     marginTop: "0.5rem",
     transition: "0.3s",
-    "&:hover": {
-      backgroundColor: "#F7F7F7",
-    },
   },
   profile: {
     height: 60,
@@ -77,8 +74,8 @@ const useStyles = makeStyles((theme) => ({
     padding: "0.2rem !important",
     marginLeft: "1rem",
     marginRight: "-1rem",
-    width: "32px",
-    height: "32px",
+    width: "26px",
+    height: "26px",
   },
   newTweetLike: {
     padding: "0.2rem !important",
@@ -86,6 +83,9 @@ const useStyles = makeStyles((theme) => ({
     width: "40px",
     height: "32px",
     overflow: "hidden",
+  },
+  newTweetLike_icon: {
+color: '#f50057'
   },
   likeCount: {
     fontSize: "0.8rem",

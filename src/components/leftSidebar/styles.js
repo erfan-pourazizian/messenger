@@ -39,9 +39,9 @@ const useStyles = makeStyles(theme => ({
             direction: "ltr",
         },
         settingIcon: {
-            width: '24px',
-            height: '24px',
-            marginLeft: '10px',
+            width: '22px',
+            height: '22px',
+            marginLeft: '7px',
             marginTop: '3px'
         },
         tweeterRoot: {
@@ -91,6 +91,13 @@ const useStyles = makeStyles(theme => ({
         chip: {
             direction: "ltr",
             marginBottom: '0.7rem',
+        },
+        bestSub: {
+            display: 'flex',
+        },
+        bestSub_img:{
+            width: "36px",
+            height: '36px'
         }
     }))
 ;

@@ -1,21 +1,21 @@
-import {useEffect, useRef, useState} from 'react';
+import { useEffect, useRef, useState } from 'react';
 import useStyle from './styles'
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
-import {Link} from "react-router-dom";
-import {getUsers} from "../../api/api_tweet";
+import { Link } from "react-router-dom";
+import { getUsers } from "../../api/api_tweet";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
-import {uploadUserPhoto} from "../../api/api_auth";
-import {toast} from "react-toastify";
-import {useTranslation} from "react-i18next";
-import {Tweeter} from "./Tweeter";
-import {Chip} from "@material-ui/core";
+import { uploadUserPhoto } from "../../api/api_auth";
+import { toast } from "react-toastify";
+import { useTranslation } from "react-i18next";
+import { Tweeter } from "./Tweeter";
+import { Chip } from "@material-ui/core";
 
 
 const LeftSidebar = () => {
-    const {t, i18n} = useTranslation();
+    const { t, i18n } = useTranslation();
     const [users, setUsers] = useState([]);
     // eslint-disable-next-line
     const [imageFile, setImageFile] = useState();
@@ -25,22 +25,22 @@ const LeftSidebar = () => {
 
     // get left side users(best tweeters)
     useEffect(() => {
-            getUsers((isOk, data) => {
-                if (!isOk)
-                    return toast.error(t("error.userFetchError"));
-                setUsers(data);
-            })
-        },
+        getUsers((isOk, data) => {
+            if (!isOk)
+                return toast.error(t("error.userFetchError"));
+            setUsers(data);
+        })
+    },
         // eslint-disable-next-line
         []);
-// setting menu
+    // setting menu
     const handleToggleMenu = (e) => {
         if (anchorMenu)
             setAnchorMenu(null);
         else
             setAnchorMenu(e.currentTarget);
     };
-// set profile photo(avatar)
+    // set profile photo(avatar)
     const handleAvatarChange = (e) => {
         if (e.target.files && e.target.files.length > 0) {
             setImageFile(e.target.files[0])
@@ -60,7 +60,7 @@ const LeftSidebar = () => {
             })
         }
     };
-// change language
+    // change language
     const changeLang = () => {
         if (i18n.language === "fa") {
             localStorage.setItem("lang", "en");
@@ -70,7 +70,7 @@ const LeftSidebar = () => {
             i18n.changeLanguage("fa");
         }
     };
-// get profile
+    // get profile
     const getImage = () => {
         if (imagePath)
             return imagePath;
@@ -88,31 +88,34 @@ const LeftSidebar = () => {
     return (
         <div className={classes.root}>
             <Grid container direction={"row-reverse"} onClick={handleToggleMenu} className={classes.menuContainer}>
-                <img src={getImage()} className={classes.profile} alt={"profile"}/>
+                <img src={getImage()} className={classes.profile} alt={"profile"} />
                 <Grid item container direction={"column"} className={classes.profText}>
                     <Typography className={classes.profName}>{localStorage.getItem("name")}</Typography>
                     <Typography className={classes.profId}>{localStorage.getItem("username")}</Typography>
                 </Grid>
-                <img className={classes.settingIcon} alt={"setting-img"} src={"/images/setting.png"}/>
-                <input ref={inputRef} type={'file'} className={classes.fileInput} onChange={handleAvatarChange}/>
+                <img className={classes.settingIcon} alt={"setting-img"} src={"/images/setting.png"} />
+                <input ref={inputRef} type={'file'} className={classes.fileInput} onChange={handleAvatarChange} />
             </Grid>
             <Grid item container direction={"column"} className={classes.tweeterRoot}>
-                <Typography className={classes.tweeterTitle}>
-                    {t("userListTitle")}
-                </Typography>
+                <div className={classes.bestSub}>
+                    <img src="/images/number-one.png" className={classes.bestSub_img} alt="number-1" />
+                    <Typography className={classes.tweeterTitle}>
+                        {t("userListTitle")}
+                    </Typography>
+                </div>
                 <Chip
                     id={'leftChip'}
                     className={classes.chip}
                     label={t("label.hashtagGuide")}
                     onDelete={handleDelete}
-                    color="primary"/>
+                    color="primary" />
                 {/*map server info for set id,name,img in tweeter func*/}
                 {
                     users.slice(0, 20).map((item, index) => {
                         return (
                             <Link key={index} to={`/users/${item._id}/${item.name}`} className={classes.tweeters}>
-                                <Tweeter name={item.name} id={item.username} img={item.image}/>
-                                {index !== 8 && <Divider/>}
+                                <Tweeter name={item.name} id={item.username} img={item.image} />
+                                {index !== 8 && <Divider />}
                             </Link>)
                     })
                 }
