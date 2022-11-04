@@ -107,11 +107,17 @@ color: '#f50057'
   },
   messageImg: {
     width: "100%",
-    height: "9rem",
+    height: "20rem",
     marginTop: "1rem",
     backgroundSize: "contain",
     backgroundPositionX: "center",
     backgroundRepeat: "no-repeat",
+    [theme.breakpoints.down("sm")]: {
+      height: "10rem",
+  },
+  [theme.breakpoints.down("xs")]: {
+    height: "8rem",
+  }
   },
   messengerProfile: {
     width: 60,
