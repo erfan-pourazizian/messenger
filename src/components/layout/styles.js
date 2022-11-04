@@ -6,21 +6,23 @@ const useStyles = makeStyles({
     height: '100vh',
     width: '100%',
     overflow: 'hidden',
+    backgroundColor: '#05141c',
   },
   leftSidebar: {
-    backgroundColor: 'white',
+    backgroundColor: '#05141c',
     width : '25%',
   },
   divider :{
     height : '100%',
     width : 1,
-    backgroundColor:"#7EBAFF !important",
+    backgroundColor:"#05141c !important",
     filter : "opacity(0.5)"
   },
   content:{
     flex: 1,
     overflowY : 'auto',
-    backgroundColor : 'white'
+    backgroundColor : '#05141c',
+    scrollbarWidth : 'none'
   },
   waitParent:{
     display :'flex',

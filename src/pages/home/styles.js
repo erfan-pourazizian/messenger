@@ -24,7 +24,12 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     background: "#1b2730",
     borderRadius: "10px",
-    border: "1px solid rgba(255, 255, 255, 0.18)",
+    marginRight: '1rem',
+    marginBottom: '0.5rem',
+    [theme.breakpoints.down("xs")]: {
+      marginLeft: '1rem',
+    },
+
   },
   messageItem: {
     padding: 18,
@@ -33,7 +38,10 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     boxShadow: "0 1px 1px 0 rgb(31 38 135 / 37%)",
     borderRadius: 7,
-    margin: "1rem 1rem 1rem 1rem",
+    margin: "1rem 1rem 1rem 0rem",
+    [theme.breakpoints.down("xs")]: {
+      margin: '1rem',
+    },
     marginTop: "0.5rem",
     transition: "0.3s",
   },
@@ -47,15 +55,20 @@ const useStyles = makeStyles((theme) => ({
     marginRight: "1rem",
   },
   input: {
-    marginRight: "1rem",
+    marginRight: "0.7rem",
     border: "none",
+    fontSize:'1.2rem',
     flex: 1,
     fontWeight: 400,
+    "&::placeholder": {
+      color:'white'
+    },
     "&:focus": {
       outline: "unset",
     },
     caretColor: "cornflowerblue",
-    background: "transparent",
+    background: "#28353e",
+    borderRadius: '0.8rem'
   },
   newMessageBtn: {
     color: "white !important",
@@ -89,7 +102,7 @@ color: '#f50057'
   },
   likeCount: {
     fontSize: "0.8rem",
-    color: theme.palette.text.hint,
+    color: "#56646f",
     marginLeft: "-1rem",
   },
   messageItemName: {
@@ -98,7 +111,7 @@ color: '#f50057'
   },
   messageItemId: {
     fontSize: "0.9rem",
-    color: theme.palette.text.hint,
+    color: "#414f5a",
     marginRight: "0.5rem",
     marginTop: "0.75rem",
   },
@@ -109,9 +122,11 @@ color: '#f50057'
     width: "100%",
     height: "20rem",
     marginTop: "1rem",
+    borderRadius: '1rem',
     backgroundSize: "contain",
     backgroundPositionX: "center",
     backgroundRepeat: "no-repeat",
+    border: '1px solid #75787e',
     [theme.breakpoints.down("sm")]: {
       height: "10rem",
   },
@@ -129,6 +144,11 @@ color: '#f50057'
   },
   Snackbar: {
     overflow: 'hidden'
+  },
+  date: {
+    marginLeft: 'auto',
+    fontSize: "1rem",
+    color: "#56646f",
   }
 }));
 

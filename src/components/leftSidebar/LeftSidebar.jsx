@@ -11,7 +11,8 @@ import { uploadUserPhoto } from "../../api/api_auth";
 import { toast } from "react-toastify";
 import { useTranslation } from "react-i18next";
 import { Messenger } from "./Messenger";
-import { Chip } from "@material-ui/core";
+import { Button } from '@mui/material';
+
 
 
 const LeftSidebar = () => {
@@ -33,13 +34,6 @@ const LeftSidebar = () => {
     },
         // eslint-disable-next-line
         []);
-    // setting menu
-    const handleToggleMenu = (e) => {
-        if (anchorMenu)
-            setAnchorMenu(null);
-        else
-            setAnchorMenu(e.currentTarget);
-    };
     // set profile photo(avatar)
     const handleAvatarChange = (e) => {
         if (e.target.files && e.target.files.length > 0) {
@@ -78,53 +72,48 @@ const LeftSidebar = () => {
             return localStorage.getItem("image");
         return "/images/user-profiles.png"
     };
-
-    const chipSelector = document.getElementById('leftChip')
-    const handleDelete = () => {
-        chipSelector.style.display = 'none'
-    }
+   
 
     const classes = useStyle();
     return (
         <div className={classes.root}>
-            <Grid container direction={"row-reverse"} onClick={handleToggleMenu} className={classes.menuContainer}>
-                <img src={getImage()} className={classes.profile} alt={"profile"} />
-                <Grid item container direction={"column"} className={classes.profText}>
-                    <Typography className={classes.profName}>{localStorage.getItem("name")}</Typography>
-                    <Typography className={classes.profId}>{localStorage.getItem("username")}</Typography>
-                </Grid>
-                <img className={classes.settingIcon} alt={"setting-img"} src={"/images/setting.png"} />
+
+            <div className={classes.menuContainer}>
+                    <img src="/images/avatar-background.jpg" alt="avatar-background" className={classes.avatar_background} >
+                    </img>
+                    <img src={getImage()} className={classes.profile} alt={"profile"} />
+                    <Grid item container direction={"column"} className={classes.profText}>
+                        <Typography className={classes.profName}>{localStorage.getItem("name")}</Typography>
+                        <Typography className={classes.profId}>@{localStorage.getItem("username")}</Typography>
+                    </Grid>
+                    <Divider className={classes.divider}/>
+                    <div className={classes.profButton}>
+                    <Button variant="text" onClick={() => {
+                    inputRef.current.click();
+                }}>My Profile</Button>
+                    </div>  
                 <input ref={inputRef} type={'file'} className={classes.fileInput} onChange={handleAvatarChange} />
-            </Grid>
+            </div>
+
             <Grid item container direction={"column"} className={classes.messengerRoot}>
                 <div className={classes.bestSub}>
-                    <img src="/images/number-one.png" className={classes.bestSub_img} alt="number-1" />
                     <Typography className={classes.messengerTitle}>
-                        {t("userListTitle")}
+                        {t("peopleYouMightKnow")}
                     </Typography>
                 </div>
-                <Chip
-                    id={'leftChip'}
-                    className={classes.chip}
-                    label={t("label.hashtagGuide")}
-                    onDelete={handleDelete}
-                    color="primary" />
                 {/*map server info for set id,name,img in messenger func*/}
                 {
-                    users.slice(0, 20).map((item, index) => {
+                    users.slice(0, 6).map((item, index) => {
                         return (
                             <Link key={index} to={`/users/${item._id}/${item.name}`} className={classes.messages}>
                                 <Messenger name={item.name} id={item.username} img={item.image} />
-                                {index !== 8 && <Divider />}
                             </Link>)
                     })
                 }
             </Grid>
             {/*menu setting*/}
             <Menu open={Boolean(anchorMenu)} onClose={() => setAnchorMenu(null)} anchorEl={anchorMenu}>
-                <MenuItem onClick={() => {
-                    inputRef.current.click();
-                }}>{t("editProfilePhotoMenu")}</MenuItem>
+                <MenuItem >{t("editProfilePhotoMenu")}</MenuItem>
                 <MenuItem onClick={() => {
                     changeLang()
                 }}>{t("changeLangMenu")}</MenuItem>

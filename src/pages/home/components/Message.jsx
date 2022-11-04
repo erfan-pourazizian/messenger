@@ -69,11 +69,11 @@ const Message = ({ data }) => {
                     </Grid>
                     <Typography dangerouslySetInnerHTML={renderMessage(data.text)} className={classes.messageText}
                         component={"p"} />
+                </Grid>
                     {
                         data.image &&
                         <img src={data.image} className={classes.messageImg} alt={"messagePhoto"}></img>
                     }
-                </Grid>
             </Grid>
             <Grid container className={classes.copyGrid} direction={"row-reverse"}>
                 <IconButton className={classes.newMessageImgBtn} onClick={copyClick}>
@@ -92,7 +92,7 @@ const Message = ({ data }) => {
                     icon={<FavoriteBorder className={classes.newMessageLike_icon} />}
                     checkedIcon={<Favorite />} />} />
                 <Typography className={classes.likeCount}>{data.likes}</Typography>
-                <Typography>{data.date}</Typography>
+                <Typography className={classes.date}>{data.date}</Typography>
             </Grid>
         </div>
     );
