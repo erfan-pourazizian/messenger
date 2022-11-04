@@ -92,6 +92,7 @@ const Message = ({ data }) => {
                     icon={<FavoriteBorder className={classes.newMessageLike_icon} />}
                     checkedIcon={<Favorite />} />} />
                 <Typography className={classes.likeCount}>{data.likes}</Typography>
+                <Typography>{data.date}</Typography>
             </Grid>
         </div>
     );

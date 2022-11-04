@@ -2,7 +2,7 @@ import {makeStyles} from "@material-ui/styles";
 
 const useStyles = makeStyles(theme => ({
         root: {
-            backgroundColor: 'white',
+            backgroundColor: '#05141c',
             width: '22%',
             padding: '1.5rem 2rem',
             overflow: "hidden",
@@ -45,7 +45,7 @@ const useStyles = makeStyles(theme => ({
             marginTop: '3px'
         },
         messengerRoot: {
-            background: "#dde6ef",
+            background: "#1b2730",
             marginTop: "3rem",
             borderRadius: "2.5rem",
             padding: "11px 24px",
@@ -80,7 +80,7 @@ const useStyles = makeStyles(theme => ({
             cursor: 'pointer',
             position: 'sticky',
             top: 0,
-            backgroundColor: '#dde6ef',
+            backgroundColor: '#1b2730',
             padding: 20,
             borderRadius: '2.5rem',
             zIndex: 1

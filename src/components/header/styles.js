@@ -3,7 +3,7 @@ import {makeStyles} from "@material-ui/styles";
 const useStyles = makeStyles(theme => ({
     header: {
         padding: 18,
-        backgroundColor: 'white',
+        backgroundColor: '#1b2730',
         display: 'flex',
         boxSizing: "border-box"
     },

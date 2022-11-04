@@ -2,7 +2,7 @@ import {makeStyles} from "@material-ui/styles";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    backgroundColor: 'white',
+    backgroundColor: '#1b2730',
     width: '18%',
     padding: '1.5rem 1rem',
     overflow:"hidden !important",

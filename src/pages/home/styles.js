@@ -2,7 +2,7 @@ import { makeStyles } from "@material-ui/styles";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: "#F7F9F9",
+    backgroundColor: "#05141c",
   },
   header: {
     padding: 18,
@@ -22,13 +22,13 @@ const useStyles = makeStyles((theme) => ({
     padding: 18,
     display: "flex",
     flexDirection: "column",
-    background: "rgba( 255, 255, 255, 0.25 )",
+    background: "#1b2730",
     borderRadius: "10px",
     border: "1px solid rgba(255, 255, 255, 0.18)",
   },
   messageItem: {
     padding: 18,
-    backgroundColor: "#F7F7F7",
+    backgroundColor: "#1b2730",
     display: "flex",
     flexDirection: "column",
     boxShadow: "0 1px 1px 0 rgb(31 38 135 / 37%)",
