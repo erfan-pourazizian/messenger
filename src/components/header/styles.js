@@ -7,22 +7,22 @@ const useStyles = makeStyles((theme) => ({
     height: "11vh",
     alignItems: 'center'
   },
-  headerTitle: {
-    fontSize: "1.2rem",
-    fontWeight: 600,
-    marginRight: "0.5rem",
-  },
   moreMenu: {
     marginLeft: "0.5rem",
+    marginRight: "1rem",
   },
   leftMenu: {
     marginRight: "auto",
+    marginLeft: "1rem",
   },
   logo: {
     width: "36px",
     height: "36px",
     marginRight: 'auto',
-    marginLeft: '1.5rem'
+    marginLeft: '1.5rem',
+    [theme.breakpoints.down("xs")]: {
+      marginLeft: 0,
+    },
   },
 }));
 

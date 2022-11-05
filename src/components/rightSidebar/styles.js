@@ -5,11 +5,15 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#1b2730",
     width: "18%",
     padding: "1.5rem 1rem",
+    height: '100vh',
     overflow: "hidden !important",
     marginRight: "1rem",
     borderRadius: "0.8rem",
     [theme.breakpoints.down("sm")]: {
-      width: "100%",
+      width: "auto",
+      marginRight: 0,
+      borderRadius: 0,
+    
     },
   },
   hashTagTitle: {
@@ -39,7 +43,10 @@ const useStyles = makeStyles((theme) => ({
     marginRight: 'auto',
     height:'18px',
     width: "18px",
-    placeSelf: 'center'
+    placeSelf: 'center',
+    [theme.breakpoints.down("sm")]: { 
+      paddingRight: '4rem'
+    }
   }
 }));
 

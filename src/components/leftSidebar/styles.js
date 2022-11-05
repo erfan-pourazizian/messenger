@@ -5,6 +5,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#05141c",
     width: "23%",
     padding: "0 1rem",
+    height: '100vh',
     overflow: "hidden",
     fontSize: "17px",
     scrollbarWidth: "none",

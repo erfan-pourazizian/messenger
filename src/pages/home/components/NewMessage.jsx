@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from 'react';
+import {useEffect, useRef,useState} from 'react';
 import useStyle from '../styles'
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
@@ -16,13 +16,13 @@ import {useTranslation} from "react-i18next";
 
 const NewMessage = ({updateMessages}) => {
 
-    const inputFile = React.useRef();
+    const inputFile = useRef();
 
     const {t} = useTranslation();
     const {messageText: message} = useMessageState();
     const messageDispatch = useMessageDispatch();
-    const [imageFile, setImageFile] = React.useState();
-    const [imagePath, setImagePath] = React.useState();
+    const [imageFile, setImageFile] = useState();
+    const [imagePath, setImagePath] = useState();
 
 // send message
     const newMessageClick = () => {

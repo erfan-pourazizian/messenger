@@ -8,10 +8,6 @@ const useStyles = makeStyles({
     overflow: 'hidden',
     backgroundColor: '#05141c',
   },
-  leftSidebar: {
-    backgroundColor: '#05141c',
-    width : '25%',
-  },
   divider :{
     height : '100%',
     width : 1,
