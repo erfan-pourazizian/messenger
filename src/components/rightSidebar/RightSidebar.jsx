@@ -26,7 +26,7 @@ const RightSidebar = () => {
     },
         // eslint-disable-next-line
         []);
-        console.log(hashTags);
+
     return (
         <div className={classes.root}>
             <Typography className={classes.hashTagTitle}>
@@ -44,7 +44,7 @@ const RightSidebar = () => {
                                         #{item.text}
                                     </Typography>
                                     <Typography className={classes.count}>
-                                     {item.count + ' messages'} 
+                                     {item.count + ' ' + t("message")} 
                                     </Typography>
                                     </Grid>
                                     <img className={classes.more} src="/images/more.png" alt="more" />

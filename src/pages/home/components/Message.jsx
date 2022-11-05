@@ -10,6 +10,7 @@ import { Checkbox, FormControlLabel } from "@material-ui/core";
 import { useState } from "react";
 import Snackbar from '@mui/material/Snackbar';
 import Slide from '@mui/material/Slide';
+import moment from 'jalali-moment'
 
 
 const Message = ({ data }) => {
@@ -92,7 +93,9 @@ const Message = ({ data }) => {
                     icon={<FavoriteBorder className={classes.newMessageLike_icon} />}
                     checkedIcon={<Favorite />} />} />
                 <Typography className={classes.likeCount}>{data.likes}</Typography>
-                <Typography className={classes.date}>{data.date}</Typography>
+                <Typography className={classes.date}>
+                {moment(data.date, 'YYYY/MM/DD').format('YYYY/MM/DD')}
+                </Typography>
             </Grid>
         </div>
     );

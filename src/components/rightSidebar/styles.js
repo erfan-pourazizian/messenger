@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
   count: {
     fontSize: "0.8rem",
     color: "#586672",
-    direction: "ltr",
+    textAlign: "initial",
   },
   more: {
     marginRight: 'auto',

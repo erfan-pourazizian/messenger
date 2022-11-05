@@ -59,6 +59,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize:'1.2rem',
     flex: 1,
     fontWeight: 400,
+    color:'white',
     "&::placeholder": {
       color:'white'
     },
@@ -71,6 +72,7 @@ const useStyles = makeStyles((theme) => ({
   },
   newMessageBtn: {
     color: "white !important",
+    backgroundColor: '#467496 !important',
     borderRadius: "1rem !important",
     minHeight: "30px !important",
     height: "30px !important",
@@ -88,6 +90,8 @@ const useStyles = makeStyles((theme) => ({
     marginRight: "-1rem",
     width: "26px",
     height: "26px",
+    filter: 'drop-shadow(3px 14px 42px #19D896) !important',
+
   },
   newMessageLike: {
     padding: "0.2rem !important",

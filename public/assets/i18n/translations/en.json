@@ -34,6 +34,6 @@
   "label.or": "Social Media",
   "label.reminder": "Remember me",
   "label.hashtagGuide": "Click to view each user's message",
-  "label.messageerGuide": "Click to view each hashtag's message"
-
+  "label.messageerGuide": "Click to view each hashtag's message",
+  "message": "messages"
 }
