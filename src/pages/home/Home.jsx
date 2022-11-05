@@ -1,6 +1,5 @@
 import {useEffect} from 'react';
 import useStyle from './styles'
-import Header from "../../components/header/Header";
 import Divider from "@material-ui/core/Divider";
 import NewMessage from "./components/NewMessage";
 import MessageList from "./components/MessageList";
@@ -32,8 +31,6 @@ const Home = () => {
 
   return (
     <div className={classes.root}>
-      <Header title={t("home")} />
-      <Divider className={classes.divider}/>
       <NewMessage updateMessages={updateMessages}/>
       <MessageList data={messages}/>
     </div>

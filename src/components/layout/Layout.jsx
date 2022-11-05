@@ -12,6 +12,7 @@ import {useTranslation} from "react-i18next";
 import {useMediaQuery, useTheme} from "@material-ui/core";
 import MessengerDrawer from "../Drawer/MessengerDrawer";
 import LeftSideDrawer from "../Drawer/LeftSideDrawer";
+import Header from "../header/Header"
 
 
 const Layout = (props) => {
@@ -49,6 +50,8 @@ const Layout = (props) => {
         </div>;
     else
         return (
+            <>
+                <Header title={t("home")} />
             <div className={classes.root}>
                 {/*collapse  right sidebar for tablet view*/}
                 {isTabletSize ? <MessengerDrawer/> : <RightSidebar/>}
@@ -60,6 +63,7 @@ const Layout = (props) => {
                 {/*collapse left sidebar for phone view*/}
                 {isPhoneSize ? <LeftSideDrawer/> : <LeftSidebar/>}
             </div>
+            </>
         )};
 
 export default Layout;

@@ -1,44 +1,46 @@
-import {makeStyles} from "@material-ui/styles";
+import { makeStyles } from "@material-ui/styles";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: '#1b2730',
-    width: '18%',
-    padding: '1.5rem 1rem',
-    overflow:"hidden !important",
+    backgroundColor: "#1b2730",
+    width: "18%",
+    padding: "1.5rem 1rem",
+    overflow: "hidden !important",
+    marginRight: "1rem",
+    borderRadius: "0.8rem",
     [theme.breakpoints.down("sm")]: {
       width: "100%",
-    }
-  },
-  logoType: {
-    fontSize: '1.25rem !important',
-    fontWeight: "600 !important",
-    marginRight: '1rem',
-    color: '#1690E7'
+    },
   },
   hashTagTitle: {
-    fontSize: '18px !important',
+    fontSize: "18px !important",
     fontWeight: "600 !important",
-    marginTop: '3rem',
-    marginBottom: '1.5rem'
+    marginBottom: "1.5rem",
   },
   hashtag: {
-    marginRight: '0.8rem',
+    textAlign: "initial",
   },
   hashTagParent: {
-    marginBottom: '0.5rem !important',
+    marginBottom: "0.5rem !important",
     padding: "0.15rem !important",
-    width: '100%',
-    borderRadius: '20%',
-    transition: '0.3s',
+    width: "100%",
+    borderRadius: "6px !important",
+    transition: "0.3s",
     "&:hover": {
-      background: "#AEA5A570"
-  }},
-  chip: {
+      background: "#AEA5A570",
+    },
+  },
+  count: {
+    fontSize: "0.8rem",
+    color: "#586672",
     direction: "ltr",
-    marginBottom : '0.7rem',
+  },
+  more: {
+    marginRight: 'auto',
+    height:'18px',
+    width: "18px",
+    placeSelf: 'center'
   }
 }));
-
 
 export default useStyles;

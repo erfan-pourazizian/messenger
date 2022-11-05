@@ -6,7 +6,6 @@ const useStyles = makeStyles((theme) => ({
   },
   header: {
     padding: 18,
-    backgroundColor: "red",
     display: "flex",
   },
   headerTitle: {

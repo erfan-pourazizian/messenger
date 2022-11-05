@@ -4,7 +4,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: "#05141c",
     width: "23%",
-    padding: "1.5rem 1rem",
+    padding: "0 1rem",
     overflow: "hidden",
     fontSize: "17px",
     scrollbarWidth: "none",

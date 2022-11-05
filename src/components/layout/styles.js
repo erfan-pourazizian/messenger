@@ -3,7 +3,7 @@ import {makeStyles} from "@material-ui/styles";
 const useStyles = makeStyles({
   root: {
     display: 'flex',
-    height: '100vh',
+    height: '89vh',
     width: '100%',
     overflow: 'hidden',
     backgroundColor: '#05141c',

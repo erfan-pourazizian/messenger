@@ -103,7 +103,7 @@ const LeftSidebar = () => {
                 </div>
                 {/*map server info for set id,name,img in messenger func*/}
                 {
-                    users.slice(0, 6).map((item, index) => {
+                    users.slice(0, 5).map((item, index) => {
                         return (
                             <Link key={index} to={`/users/${item._id}/${item.name}`} className={classes.messages}>
                                 <Messenger name={item.name} id={item.username} img={item.image} />

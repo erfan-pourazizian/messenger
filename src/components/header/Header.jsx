@@ -1,11 +1,12 @@
 import Typography from "@material-ui/core/Typography";
 import useStyle from './styles'
-import {useMediaQuery, useTheme} from "@material-ui/core";
+import { useMediaQuery, useTheme } from "@material-ui/core";
 import MenuRoundedIcon from "@material-ui/icons/MenuRounded";
 import GroupIcon from '@material-ui/icons/Group';
-import {toggleDrawer, toggleLeftDrawer, useLayoutDispatch} from "../../context/LayoutContext";
+import { toggleDrawer, toggleLeftDrawer, useLayoutDispatch } from "../../context/LayoutContext";
+import Grid from "@material-ui/core/Grid";
 
-const Header = ({title}) => {
+const Header = ({ title }) => {
     const theme = useTheme()
     // responsive for phone and tablet
     const isTabletSize = useMediaQuery(theme.breakpoints.down("sm"))
@@ -14,25 +15,25 @@ const Header = ({title}) => {
     const classes = useStyle();
     const layoutDispatch = useLayoutDispatch();
 
-    const handleRightToggle =()=>toggleDrawer(layoutDispatch)
-    const handleLeftToggle =()=>toggleLeftDrawer(layoutDispatch)
+    const handleRightToggle = () => toggleDrawer(layoutDispatch)
+    const handleLeftToggle = () => toggleLeftDrawer(layoutDispatch)
 
     return (
         <div className={classes.header}>
             {/*just show icon for tablet drawer*/}
             {isTabletSize && (
                 <iconButton onClick={handleRightToggle} className={classes.moreMenu} >
-                <MenuRoundedIcon/>
-            </iconButton>
+                    <MenuRoundedIcon />
+                </iconButton>
             )}
-            <img src="/images/home.png" alt="home" />
             <Typography className={classes.headerTitle}>
                 {title}
             </Typography>
-             {/*just show icon for phone  drawer*/}
+                    <img className={classes.logo} src={"/images/logo.png"} alt={"logo"} />
+            {/*just show icon for phone  drawer*/}
             {isPhoneSize && (
                 <iconButton onClick={handleLeftToggle} className={classes.leftMenu}>
-                    <GroupIcon/>
+                    <GroupIcon />
                 </iconButton>
             )}
         </div>
