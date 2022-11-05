@@ -23,17 +23,14 @@ const Header = ({ title }) => {
             {/*just show icon for tablet drawer*/}
             {isTabletSize && (
                 <iconButton onClick={handleRightToggle} className={classes.moreMenu} >
-                    <MenuRoundedIcon />
+                    <MenuRoundedIcon color="secondary" />
                 </iconButton>
             )}
-            <Typography className={classes.headerTitle}>
-                {title}
-            </Typography>
                     <img className={classes.logo} src={"/images/logo.png"} alt={"logo"} />
             {/*just show icon for phone  drawer*/}
             {isPhoneSize && (
                 <iconButton onClick={handleLeftToggle} className={classes.leftMenu}>
-                    <GroupIcon />
+                    <GroupIcon color="secondary"/>
                 </iconButton>
             )}
         </div>
