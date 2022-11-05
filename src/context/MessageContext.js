@@ -1,8 +1,8 @@
-import React from "react";
+import { createContext, useReducer, useContext } from "react";
 import { getHashTags } from "../api/api_messages";
 
-const MessageStateContext = React.createContext();
-const MessageDispatchContext = React.createContext();
+const MessageStateContext = createContext();
+const MessageDispatchContext = createContext();
 
 function messageReducer(state, action) {
   switch (action.type) {
@@ -36,7 +36,7 @@ function messageReducer(state, action) {
 }
 
 function MessageProvider({ children }) {
-  const [state, dispatch] = React.useReducer(messageReducer, {
+  const [state, dispatch] = useReducer(messageReducer, {
     messageText: "",
     messageList: [],
     hashTags: [],
@@ -51,7 +51,7 @@ function MessageProvider({ children }) {
 }
 
 function useMessageState() {
-  const context = React.useContext(MessageStateContext);
+  const context = useContext(MessageStateContext);
   if (context === undefined) {
     throw new Error("useMessageState must be used within a MessageProvider");
   }
@@ -59,7 +59,7 @@ function useMessageState() {
 }
 
 function useMessageDispatch() {
-  const context = React.useContext(MessageDispatchContext);
+  const context = useContext(MessageDispatchContext);
   if (context === undefined) {
     throw new Error("useMessageDispatch must be used within a MessageProvider");
   }

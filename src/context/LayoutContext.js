@@ -1,16 +1,14 @@
-import React from "react";
+import { createContext, useReducer, useContext } from "react";
 
-
-const LayoutStateContext = React.createContext();
-const LayoutDispatchContext = React.createContext();
+const LayoutStateContext = createContext();
+const LayoutDispatchContext = createContext();
 
 function layoutReducer(state, action) {
   switch (action.type) {
     case "TOGGLE_DRAWER":
-      return {...state, drawerOpen: !state.drawerOpen};
+      return { ...state, drawerOpen: !state.drawerOpen };
     case "TOGGLE_LEFT_DRAWER":
-      return {...state, leftDrawerOpen: !state.leftDrawerOpen};
-
+      return { ...state, leftDrawerOpen: !state.leftDrawerOpen };
 
     default: {
       throw new Error(`Unhandled action type: ${action.type}`);
@@ -18,9 +16,9 @@ function layoutReducer(state, action) {
   }
 }
 
-function LayoutProvider({children}) {
-  const [state, dispatch] = React.useReducer(layoutReducer, {
-    drawerOpen : false,
+function LayoutProvider({ children }) {
+  const [state, dispatch] = useReducer(layoutReducer, {
+    drawerOpen: false,
     leftDrawerOpen: false,
   });
   return (
@@ -33,7 +31,7 @@ function LayoutProvider({children}) {
 }
 
 function useLayoutState() {
-  const context = React.useContext(LayoutStateContext);
+  const context = useContext(LayoutStateContext);
   if (context === undefined) {
     throw new Error("useMessageState must be used within a MessageProvider");
   }
@@ -41,14 +39,20 @@ function useLayoutState() {
 }
 
 function useLayoutDispatch() {
-  const context = React.useContext(LayoutDispatchContext);
+  const context = useContext(LayoutDispatchContext);
   if (context === undefined) {
     throw new Error("useMessageDispatch must be used within a MessageProvider");
   }
   return context;
 }
 
-export {LayoutProvider, useLayoutState, useLayoutDispatch, toggleDrawer,toggleLeftDrawer};
+export {
+  LayoutProvider,
+  useLayoutState,
+  useLayoutDispatch,
+  toggleDrawer,
+  toggleLeftDrawer,
+};
 
 // ###########################################################
 function toggleDrawer(dispatch) {
@@ -61,7 +65,3 @@ function toggleLeftDrawer(dispatch) {
     type: "TOGGLE_LEFT_DRAWER",
   });
 }
-
-
-
-
