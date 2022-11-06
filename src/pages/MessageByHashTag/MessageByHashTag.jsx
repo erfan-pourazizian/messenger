@@ -1,7 +1,5 @@
 import {useEffect} from 'react';
 import useStyle from "../home/styles";
-import Header from "../../components/header/Header";
-import Divider from "@material-ui/core/Divider";
 import MessageList from "../home/components/MessageList";
 import {getMessagesByHashTagRequest} from "../../api/api_messages";
 import {toast} from "react-toastify";
@@ -26,8 +24,6 @@ const MessageByHashTag = (props) => {
   const classes = useStyle();
   return (
     <div className={classes.root}>
-      <Header title={props.match.params.hashtag} icon={<img src={"/images/hashtag.png"} alt={"hashtag_icon"}/>}/>
-      <Divider className={classes.divider}/>
       <MessageList  data={messageList}/>
     </div>
   );
