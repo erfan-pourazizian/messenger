@@ -1,5 +1,4 @@
 import { createTheme } from "@material-ui/core/styles";
-import { textTransform } from "@mui/system";
 
 const colorPrimary = "#31528c";
 
