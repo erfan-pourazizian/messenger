@@ -100,7 +100,7 @@ const useStyles = makeStyles((theme) => ({
     overflow: "hidden",
   },
   newMessageLike_icon: {
-    color: "#f50057",
+    color: "#e9e6e7",
   },
   likeCount: {
     fontSize: "0.8rem",

@@ -1,13 +1,13 @@
 import { createTheme } from '@material-ui/core/styles'
-import tinyColor from 'tinycolor2'
 
-const colorPrimary = "#5ea9dd";
+
+const colorPrimary = "#31528c";
 
 const Theme = createTheme({
   palette: {
     primary: {
       main: colorPrimary,
-      light: tinyColor(colorPrimary).lighten().toHexString(),
+     
     }
   },
   overrides: {

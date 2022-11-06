@@ -6,7 +6,7 @@ const useStyles = makeStyles(theme => ({
         MozOverflow:'hidden !important',
     },
     container: {
-        background: "white",
+        background: "#cfd7e0",
         width: "30rem",
         marginTop : "6rem",
         marginRight: "auto",
@@ -48,7 +48,8 @@ const useStyles = makeStyles(theme => ({
     },
     dividerText: {
         textAlign: 'center',
-        marginTop: '5px'
+        marginTop: '5px',
+        color: 'black'
     },
     iconsParent: {
         textAlign: "center",
@@ -56,9 +57,21 @@ const useStyles = makeStyles(theme => ({
         padding: '10px'
     },
     icon: {
-        margin: '0 10px 0 10px',
-        width: '30px',
-        height: '30px'
+        margin: '0 5px 0 5px',
+        width: '24px',
+        height: '24px'
+    },
+    inputText: {
+        color: 'black'
+    },
+    button : {
+        backgroundColor: '#31528c',
+        "&:hover":{
+            backgroundColor: '#467cda',
+        }
+    },
+    formInput: {
+        marginBottom: '1rem'
     }
 }));
 

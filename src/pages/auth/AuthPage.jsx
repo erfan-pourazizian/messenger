@@ -1,4 +1,4 @@
-import {useEffect, useRef, useState} from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import useStyles from './styles'
@@ -6,11 +6,11 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Input from "@material-ui/core/Input";
 import Button from "@material-ui/core/Button";
-import {toast} from "react-toastify";
+import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-import {loginApi, registerApi} from "../../api/api_auth";
-import {useTranslation} from "react-i18next";
-import {Checkbox, FormControlLabel} from "@material-ui/core";
+import { loginApi, registerApi } from "../../api/api_auth";
+import { useTranslation } from "react-i18next";
+import { Checkbox, FormControlLabel } from "@material-ui/core";
 import BackGround from "../liveBackground/backGround";
 import SocialmediaSection from "./SocialmediaSection";
 
@@ -20,7 +20,7 @@ const REG_TAB_VALUE = 2;
 
 const AuthPage = () => {
     const classes = useStyles();
-    const {t} = useTranslation();
+    const { t } = useTranslation();
 
     const [tab, setTab] = useState(LOGIN_TAB_VALUE);
 
@@ -38,7 +38,7 @@ const AuthPage = () => {
     const handleChangeTab = (e, newValue) => {
         setTab(newValue);
     };
-// validate login
+    // validate login
     const validateLogin = (user) => {
         if (!user.username)
             return t("validate.userName");
@@ -56,7 +56,7 @@ const AuthPage = () => {
         if (user.password !== user.confPasswordRegister)
             return t("validate.confPassword")
     };
-// handle Register
+    // handle Register
     const handleRegister = () => {
         const user = {
             name: fullNameRegister,
@@ -106,17 +106,17 @@ const AuthPage = () => {
     document.onkeydown = function (ev) {
         ev = ev || window.event;
         switch (ev.which || ev.keyCode) {
-            case 13 :
+            case 13:
                 signInFinder()
                 break;
-            default :
+            default:
                 break
         }
     };
 
     const loginInputRef = useRef(null);
 
-    useEffect(()=>{
+    useEffect(() => {
         loginInputRef.current.click();
     }, []);
 
@@ -133,64 +133,66 @@ const AuthPage = () => {
     return (
         <div className={classes.main}>
             <Paper className={classes.container}>
-                <img className={classes.logo} alt={"messenger"} src={"/images/Logo.png"}/>
+                <img className={classes.logo} alt={"messenger"} src={"/images/Logo.png"} />
                 <Tabs
                     value={tab}
                     indicatorColor="primary"
                     textColor="primary"
                     onChange={handleChangeTab}
                 >
-                    <Tab label={t("tab.login")} value={LOGIN_TAB_VALUE} className={classes.tab}/>
-                    <Tab label={t("tab.register")} value={REG_TAB_VALUE} className={classes.tab}/>
+                    <Tab label={t("tab.login")} value={LOGIN_TAB_VALUE} className={classes.tab} />
+                    <Tab label={t("tab.register")} value={REG_TAB_VALUE} className={classes.tab} />
                 </Tabs>
                 {tab === LOGIN_TAB_VALUE &&
                     <div className={classes.containerInput}>
-                        <Typography>{t("label.username")}</Typography>
-                        <Input className={"uni_m_b_small"}
-                               ref={loginInputRef}  value={usernameLogin} onChange={usernameLoginHandler}
+                        <Typography className={classes.inputText} >{t("label.username")}</Typography>
+                        <Input className={classes.formInput}
+                            ref={loginInputRef} value={usernameLogin} onChange={usernameLoginHandler}
                         >
                         </Input>
-                        <Typography>{t("label.password")}</Typography>
-                        <Input className={"uni_m_b_small"}
-                               value={passwordLogin} onChange={passwordLoginHandler}
+                        <Typography className={classes.inputText}>{t("label.password")}</Typography>
+                        <Input className={classes.formInput}
+                            value={passwordLogin} onChange={passwordLoginHandler}
                         />
                         <FormControlLabel className={classes.markIcon}
-                                          control={<Checkbox color="primary"/>}
-                                          label={t("label.reminder")}
+                            control={<Checkbox color="primary" />}
+                            label={
+                            <Typography className={classes.inputText}>{t("label.reminder")}</Typography>}
                         />
-                        <Button id={"keyBind"} variant={"contained"} color="primary"
-                                onClick={handleLogin}>
+                        <Button id={"keyBind"} className={classes.button}
+                            onClick={handleLogin}>
                             {t("btn.login")}
                         </Button>
                     </div>
                 }
                 {tab === REG_TAB_VALUE &&
                     <div className={classes.containerInput}>
-                        <Typography>{t("label.fullName")}</Typography>
-                        <Input className={"uni_m_b_small"}
-                               value={fullNameRegister} onChange={fullNameRegisterHandler}
+                        <Typography className={classes.inputText}>{t("label.fullName")}</Typography>
+                        <Input className={classes.formInput}
+                            value={fullNameRegister} onChange={fullNameRegisterHandler}
                         />
-                        <Typography>{t("label.username")}</Typography>
-                        <Input className={"uni_m_b_small"}
-                               value={usernameRegister} onChange={usernameRegisterHandler}
+                        <Typography className={classes.inputText}>{t("label.username")}</Typography>
+                        <Input className={classes.formInput}
+                            value={usernameRegister} onChange={usernameRegisterHandler}
                         />
-                        <Typography>{t("label.password")}</Typography>
-                        <Input className={"uni_m_b_small"}
-                               value={passwordRegister} onChange={passwordRegisterHandler}
+                        <Typography className={classes.inputText}>{t("label.password")}</Typography>
+                        <Input className={classes.formInput}
+                            value={passwordRegister} onChange={passwordRegisterHandler}
                         />
-                        <Typography>{t("label.confPassword")}</Typography>
-                        <Input className={"uni_m_b_small"}
-                               value={confPasswordRegister} onChange={confPasswordRegisterHandler}
+                        <Typography className={classes.inputText}>{t("label.confPassword")}</Typography>
+                        <Input className={classes.formInput}
+                            value={confPasswordRegister} onChange={confPasswordRegisterHandler}
                         />
-                        <Button id={"keyBind"} variant={"contained"} color="primary"
-                                onClick={handleRegister}>{t("btn.register")}</Button>
+                        <Button id={"keyBind"} className={classes.button}
+                            onClick={handleRegister}>{t("btn.register")}
+                        </Button>
                     </div>
                 }
                 <div className={classes.socialMedia}>
-                    <SocialmediaSection/>
+                    <SocialmediaSection />
                 </div>
             </Paper>
-            <BackGround/>
+            <BackGround />
         </div>
 
     );

@@ -22,10 +22,6 @@ a:visited {
   color: unset;
 }
 
-
-.uni_m_b_small {
-  margin-bottom: 1rem;
-}
 width
 ::-webkit-scrollbar {
   width: none;
@@ -50,7 +46,7 @@ width
   height: 100%;
   overflow: hidden;
   z-index: -1;
-  background: #2c69d1;
+  background: #192a48;
 }
 
 .circles li{
