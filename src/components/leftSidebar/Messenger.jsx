@@ -21,7 +21,7 @@ export const Messenger = ({ name, id, img }) => {
                     <Typography className={classes.peopleProfName}>{name}</Typography>
                     <Typography className={classes.peopleProfId}>@{id}</Typography>
                 </Grid>
-                <Button className={classes.messengerButton} variant="contained">مشاهده</Button>
+                <Button injectFirst className={classes.messengerButton} variant="contained">مشاهده</Button>
             </Grid>
         </ButtonBase>
     )

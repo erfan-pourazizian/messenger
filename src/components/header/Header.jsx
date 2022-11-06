@@ -9,8 +9,10 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import Badge from '@mui/material/Badge';
 import TranslateIcon from '@mui/icons-material/Translate';
 import { useTranslation } from "react-i18next";
+import { Button } from '@mui/material';
+import {Link} from "react-router-dom";
 
-const Header = ({ title }) => {
+const Header = () => {
     const theme = useTheme()
     // responsive for phone and tablet
     const isTabletSize = useMediaQuery(theme.breakpoints.down("sm"))
@@ -45,25 +47,32 @@ const Header = ({ title }) => {
             )}
 
             <ProfileDialog />
+            <div className={classes.desktop}>
+                <Divider orientation={"vertical"} className={classes.divider} />
 
-            <Divider orientation={"vertical"} className={classes.divider} />
+                <Badge color="secondary" badgeContent=" " variant="dot" overlap="circular" sx={{ marginRight: '1rem' }}>
+                    <NotificationsIcon sx={{ color: '#c7d6e5', padding: '0 1px',placeSelf: 'center' }} />
+                </Badge>
 
-            <Badge color="secondary" badgeContent=" " variant="dot" overlap="circular" sx={{ marginRight: '1rem' }}>
-                <NotificationsIcon sx={{ color: '#c7d6e5', padding: '2px 4px'}} />
-            </Badge>
+                <TranslateIcon sx={{ color: '#c7d6e5', marginRight: '1rem', cursor: 'pointer',placeSelf: 'center' }} onClick={() => {
+                    changeLang()
+                }} />
 
-            <TranslateIcon sx={{ color: '#c7d6e5', marginRight: '1rem', cursor: 'pointer' }} onClick={() => {
-                changeLang()
-            }}/>
+                <Link to={"/"}>
+                    <Button className={classes.messengerButton} variant="contained">{t('home')}
+                    <img className={classes.homeIcon} src="/images/home.png" alt="home" />
+                    </Button>
+                </Link>
+            </div>
 
-                <img className={classes.logo} src={"/images/logo.png"} alt={"logo"} />
+            <img className={classes.logo} src={"/images/logo.png"} alt={"logo"} />
 
-                {/*just show icon for phone  drawer*/}
-                {isPhoneSize && (
-                    <iconButton onClick={handleLeftToggle} className={classes.leftMenu}>
-                        <GroupIcon color="secondary" />
-                    </iconButton>
-                )}
+            {/*just show icon for phone  drawer*/}
+            {isPhoneSize && (
+                <iconButton onClick={handleLeftToggle} className={classes.leftMenu}>
+                    <GroupIcon color="secondary" />
+                </iconButton>
+            )}
         </div>
     );
 };

@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     width: "36px",
     height: "36px",
     marginRight: "auto",
-    marginLeft: "1.5rem",
+    marginLeft: "3rem",
     [theme.breakpoints.down("xs")]: {
       marginLeft: 0,
       position: "absolute",
@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
     width: "fit-content",
     borderRadius: "15px",
     padding: "3px 3px",
-    marginRight: '1rem',
+    marginRight: "2rem",
     [theme.breakpoints.down("xs")]: {
       marginRight: 0,
     },
@@ -63,7 +63,7 @@ const useStyles = makeStyles((theme) => ({
   },
   dialogUser: {
     color: "black !important",
-    marginLeft: "1rem !important",
+    marginLeft: "1.5rem !important",
   },
   user: {
     [theme.breakpoints.down("xs")]: {
@@ -71,10 +71,31 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   divider: {
-    height : '50%',
-    backgroundColor:"#1e323f",
-    marginRight: '0.5rem'
-  }
+    height: "50%",
+    backgroundColor: "#1e323f",
+    marginRight: "0.5rem",
+  },
+  messengerButton: {
+    borderRadius: "12px !important",
+    height: "2rem !important",
+    placeSelf: "center !important",
+    backgroundColor: "#f7fcfe !important",
+    color: "black !important",
+    marginRight: "1.5rem !important",
+    cursor: 'pointer',
+    padding: "3px 3px",
+  },
+  desktop: {
+    display: "flex",
+    [theme.breakpoints.down("xs")]: {
+      display: "none",
+    },
+  },
+  homeIcon: {
+    width: "24px",
+    height: "24px",
+    marginRight: '0.3rem'
+  },
 }));
 
 export default useStyles;

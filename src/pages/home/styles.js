@@ -23,12 +23,11 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     background: "#1b2730",
     borderRadius: "10px",
-    marginRight: '1rem',
-    marginBottom: '0.5rem',
+    marginRight: "1rem",
+    marginBottom: "0.5rem",
     [theme.breakpoints.down("xs")]: {
-      marginLeft: '1rem',
+      marginLeft: "1rem",
     },
-
   },
   messageItem: {
     padding: 18,
@@ -39,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 7,
     margin: "1rem 1rem 1rem 0rem",
     [theme.breakpoints.down("xs")]: {
-      margin: '1rem',
+      margin: "1rem",
     },
     marginTop: "0.5rem",
     transition: "0.3s",
@@ -56,24 +55,24 @@ const useStyles = makeStyles((theme) => ({
   input: {
     marginRight: "0.7rem",
     border: "none",
-    fontSize:'1.2rem',
+    fontSize: "1.2rem",
     flex: 1,
     fontWeight: 400,
-    color:'white',
+    color: "white",
     "&::placeholder": {
-      color:'white'
+      color: "white",
     },
     "&:focus": {
       outline: "unset",
     },
     caretColor: "cornflowerblue",
     background: "#28353e",
-    borderRadius: '0.8rem'
+    borderRadius: "0.8rem",
   },
   newMessageBtn: {
     color: "white !important",
-    backgroundColor: '#467496 !important',
-    borderRadius: "1rem !important",
+    backgroundColor: "#467496 !important",
+    borderRadius: "0.4rem !important",
     minHeight: "30px !important",
     height: "30px !important",
     fontFamily: "shabnam !important",
@@ -90,8 +89,8 @@ const useStyles = makeStyles((theme) => ({
     marginRight: "-1rem",
     width: "26px",
     height: "26px",
-    filter: 'drop-shadow(3px 14px 42px #19D896) !important',
-
+    filter: "drop-shadow(3px 14px 42px #19D896) !important",
+    placeSelf: "center",
   },
   newMessageLike: {
     padding: "0.2rem !important",
@@ -101,7 +100,7 @@ const useStyles = makeStyles((theme) => ({
     overflow: "hidden",
   },
   newMessageLike_icon: {
-color: '#f50057'
+    color: "#f50057",
   },
   likeCount: {
     fontSize: "0.8rem",
@@ -125,17 +124,17 @@ color: '#f50057'
     width: "100%",
     height: "20rem",
     marginTop: "1rem",
-    borderRadius: '1rem',
+    borderRadius: "1rem",
     backgroundSize: "contain",
     backgroundPositionX: "center",
     backgroundRepeat: "no-repeat",
-    border: '1px solid #75787e',
+    border: "1px solid #75787e",
     [theme.breakpoints.down("sm")]: {
       height: "10rem",
-  },
-  [theme.breakpoints.down("xs")]: {
-    height: "8rem",
-  }
+    },
+    [theme.breakpoints.down("xs")]: {
+      height: "8rem",
+    },
   },
   messengerProfile: {
     width: 60,
@@ -146,13 +145,13 @@ color: '#f50057'
     marginTop: 16,
   },
   Snackbar: {
-    overflow: 'hidden'
+    overflow: "hidden",
   },
   date: {
-    marginLeft: 'auto',
+    marginLeft: "auto",
     fontSize: "1rem",
     color: "#56646f",
-  }
+  },
 }));
 
 export default useStyles;

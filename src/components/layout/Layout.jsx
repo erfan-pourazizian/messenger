@@ -51,7 +51,7 @@ const Layout = (props) => {
     else
         return (
             <>
-                <Header title={t("home")} />
+                <Header/>
                 <div className={classes.root}>
                     {/*collapse  right sidebar for tablet view*/}
                     {isTabletSize ? <MessengerDrawer /> : <RightSidebar />}
