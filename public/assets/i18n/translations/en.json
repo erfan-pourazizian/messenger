@@ -4,9 +4,8 @@
   "hashTagTitle": "hottest hashTags",
   "peopleYouMightKnow": "people you might know",
   "messageBtn": "send",
-  "editProfilePhotoMenu": "Edit Profile Photo",
-  "changeLangMenu": "change language to persian",
-  "logoutMenu": "Logout",
+  "logout": "Change Account",
+  "account-details": "Account Details",
   "wait": "please wait",
   "404_desc": "we did not found the page",
   "error.userFetchError": "Failed to Fetch User List",
@@ -33,7 +32,7 @@
   "label.doMessage": "...type",
   "label.or": "Social Media",
   "label.reminder": "Remember me",
-  "label.hashtagGuide": "Click to view each user's message",
-  "label.messageerGuide": "Click to view each hashtag's message",
-  "message": "messages"
+  "message": "messages",
+  "watch": "watch",
+  "profile": "My Profile"
 }

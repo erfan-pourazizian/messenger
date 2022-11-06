@@ -76,9 +76,10 @@ const LeftSidebar = () => {
                 </Grid>
                 <Divider className={classes.divider} />
                 <div className={classes.profButton}>
-                    <Button sx={{textTransform: 'initial'}} variant="text" onClick={() => {
+                    <Button sx={{ textTransform: 'initial' }} variant="text" onClick={() => {
                         inputRef.current.click();
-                    }}>My Profile</Button>
+                    }}>{t("profile")}
+                    </Button>
                 </div>
                 <input ref={inputRef} type={'file'} className={classes.fileInput} onChange={handleAvatarChange} />
             </div>

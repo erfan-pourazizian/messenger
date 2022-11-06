@@ -3,8 +3,13 @@ import ButtonBase from "@material-ui/core/ButtonBase";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { Button } from '@mui/material';
+import { useTranslation } from "react-i18next";
 
 export const Messenger = ({ name, id, img }) => {
+
+    const { t } = useTranslation();
+
+
     const classes = useStyle();
     // show profile photo if exist
     const getImage = () => {
@@ -21,7 +26,9 @@ export const Messenger = ({ name, id, img }) => {
                     <Typography className={classes.peopleProfName}>{name}</Typography>
                     <Typography className={classes.peopleProfId}>@{id}</Typography>
                 </Grid>
-                <Button injectFirst className={classes.messengerButton} variant="contained">مشاهده</Button>
+                <Button injectFirst sx={{ textTransform: 'initial' }} className={classes.messengerButton} variant="contained">{
+                    t('watch')}
+                </Button>
             </Grid>
         </ButtonBase>
     )

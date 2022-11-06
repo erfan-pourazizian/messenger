@@ -10,10 +10,12 @@ import Typography from '@mui/material/Typography';
 import { useState } from 'react';
 import useStyle from './styles';
 import Grid from "@material-ui/core/Grid";
+import { useTranslation } from "react-i18next";
 
 
 function SimpleDialog(props) {
   const { onClose, open } = props;
+  const { t } = useTranslation();
 
   const handleClose = () => {
     onClose();
@@ -32,12 +34,12 @@ function SimpleDialog(props) {
 
   return (
     <Dialog sx={{ direction: 'ltr' }} onClose={handleClose} open={open}>
-      <DialogTitle sx={{ color: 'black', backgroundColor: '#f7fcfe' }}>Account details</DialogTitle>
-      <List sx={{ pt: 0, backgroundColor: '#f7fcfe' }}>
+      <DialogTitle sx={{ color: 'black', backgroundColor: '#f7fcfe',textAlign: 'center' }}>{t('account-details')}</DialogTitle>
+      <List sx={{ pt: 0, backgroundColor: '#f7fcfe',direction: 'rtl'}}>
         <ListItem button onClick={() => handleListItemClick()}>
           <img src={getImage()} alt="profile" className={classes.dialogProfile} />
           <ListItemText disableTypography primary={
-            <Typography sx={{ color: 'black', marginLeft: '1rem' }}>
+            <Typography sx={{ color: 'black', marginLeft: '2.5rem' }}>
               {localStorage.getItem("username")}
             </Typography>} />
         </ListItem>
@@ -53,7 +55,7 @@ function SimpleDialog(props) {
           </ListItemAvatar>
           <ListItemText disableTypography primary={
             <Typography sx={{ color: 'black' }}>
-              Change Account
+              {t('logout')}
             </Typography>} />
         </ListItem>
       </List>

@@ -4,9 +4,8 @@
   "hashTagTitle": "ترند های روز",
   "peopleYouMightKnow": "افرادی که ممکن است بشناسید",
   "messageBtn": "ارسال",
-  "editProfilePhotoMenu": "ویرایش عکس پروفایل",
-  "changeLangMenu": "تغییر زبان به انگلیسی",
-  "logoutMenu": "خروج",
+  "logout": "تعویض کاربر",
+  "account-details": "جزییات کاربر",
   "wait": "شکیبا باشید",
   "404_desc": "صفحه مورد نظر یافت نشد",
   "error.userFetchError": "عملیات گرفتن لیست مخاطبان ناموفق بود ",
@@ -33,7 +32,7 @@
   "label.doMessage": "بنویس برامون ...",
   "label.or": "شبکه های اجتماعی",
   "label.reminder": "مرا بخاطر بسپار",
-  "label.hashtagGuide": "برای مشاهده پیام های هر کاربر کلیک کنید",
-  "label.messengerGuide": "برای مشاهده پیام های هر هشتگ کلیک کنید",
-  "message": "ییام"
+  "message": "ییام",
+  "watch": "مشاهده",
+  "profile": "پروفایل من"
 }
