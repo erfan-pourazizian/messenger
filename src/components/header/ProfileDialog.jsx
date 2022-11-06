@@ -32,8 +32,8 @@ function SimpleDialog(props) {
 
   return (
     <Dialog sx={{ direction: 'ltr' }} onClose={handleClose} open={open}>
-      <DialogTitle sx={{ color: 'black' }}>Account details</DialogTitle>
-      <List sx={{ pt: 0 }}>
+      <DialogTitle sx={{ color: 'black', backgroundColor: '#f7fcfe' }}>Account details</DialogTitle>
+      <List sx={{ pt: 0, backgroundColor: '#f7fcfe' }}>
         <ListItem button onClick={() => handleListItemClick()}>
           <img src={getImage()} alt="profile" className={classes.dialogProfile} />
           <ListItemText disableTypography primary={
@@ -46,17 +46,17 @@ function SimpleDialog(props) {
           localStorage.clear();
           window.location.reload()
         }}>
-        <ListItemAvatar>
-          <Avatar>
-            <AddIcon />
-          </Avatar>
-        </ListItemAvatar>
-        <ListItemText disableTypography primary={
-          <Typography sx={{ color: 'black' }}>
-            Change Account
-          </Typography>} />
-      </ListItem>
-    </List>
+          <ListItemAvatar>
+            <Avatar>
+              <AddIcon />
+            </Avatar>
+          </ListItemAvatar>
+          <ListItemText disableTypography primary={
+            <Typography sx={{ color: 'black' }}>
+              Change Account
+            </Typography>} />
+        </ListItem>
+      </List>
     </Dialog >
   );
 }
