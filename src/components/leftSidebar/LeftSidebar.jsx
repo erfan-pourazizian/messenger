@@ -5,8 +5,6 @@ import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import { Link } from "react-router-dom";
 import { getUsers } from "../../api/api_messages";
-import Menu from "@material-ui/core/Menu";
-import MenuItem from "@material-ui/core/MenuItem";
 import { uploadUserPhoto } from "../../api/api_auth";
 import { toast } from "react-toastify";
 import { useTranslation } from "react-i18next";
@@ -16,12 +14,11 @@ import { Button } from '@mui/material';
 
 
 const LeftSidebar = () => {
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
     const [users, setUsers] = useState([]);
     // eslint-disable-next-line
     const [imageFile, setImageFile] = useState();
     const [imagePath, setImagePath] = useState();
-    const [anchorMenu, setAnchorMenu] = useState();
     const inputRef = useRef();
 
     // get left side users(best sub)
@@ -54,16 +51,7 @@ const LeftSidebar = () => {
             })
         }
     };
-    // change language
-    const changeLang = () => {
-        if (i18n.language === "fa") {
-            localStorage.setItem("lang", "en");
-            i18n.changeLanguage("en");
-        } else {
-            localStorage.setItem("lang", "fa");
-            i18n.changeLanguage("fa");
-        }
-    };
+
     // get profile
     const getImage = () => {
         if (imagePath)
@@ -72,26 +60,26 @@ const LeftSidebar = () => {
             return localStorage.getItem("image");
         return "/images/user-profiles.png"
     };
-   
+
 
     const classes = useStyle();
     return (
         <div className={classes.root}>
 
             <div className={classes.menuContainer}>
-                    <img src="/images/avatar-background.jpg" alt="avatar-background" className={classes.avatar_background} >
-                    </img>
-                    <img src={getImage()} className={classes.profile} alt={"profile"} />
-                    <Grid item container direction={"column"} className={classes.profText}>
-                        <Typography className={classes.profName}>{localStorage.getItem("name")}</Typography>
-                        <Typography className={classes.profId}>@{localStorage.getItem("username")}</Typography>
-                    </Grid>
-                    <Divider className={classes.divider}/>
-                    <div className={classes.profButton}>
+                <img src="/images/avatar-background.jpg" alt="avatar-background" className={classes.avatar_background} >
+                </img>
+                <img src={getImage()} className={classes.profile} alt={"profile"} />
+                <Grid item container direction={"column"} className={classes.profText}>
+                    <Typography className={classes.profName}>{localStorage.getItem("name")}</Typography>
+                    <Typography className={classes.profId}>@{localStorage.getItem("username")}</Typography>
+                </Grid>
+                <Divider className={classes.divider} />
+                <div className={classes.profButton}>
                     <Button variant="text" onClick={() => {
-                    inputRef.current.click();
-                }}>My Profile</Button>
-                    </div>  
+                        inputRef.current.click();
+                    }}>My Profile</Button>
+                </div>
                 <input ref={inputRef} type={'file'} className={classes.fileInput} onChange={handleAvatarChange} />
             </div>
 
@@ -111,17 +99,6 @@ const LeftSidebar = () => {
                     })
                 }
             </Grid>
-            {/*menu setting*/}
-            <Menu open={Boolean(anchorMenu)} onClose={() => setAnchorMenu(null)} anchorEl={anchorMenu}>
-                <MenuItem >{t("editProfilePhotoMenu")}</MenuItem>
-                <MenuItem onClick={() => {
-                    changeLang()
-                }}>{t("changeLangMenu")}</MenuItem>
-                <MenuItem onClick={() => {
-                    localStorage.clear();
-                    window.location.reload()
-                }}>{t("logoutMenu")}</MenuItem>
-            </Menu>
         </div>
     );
 };

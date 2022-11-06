@@ -1,6 +1,5 @@
 import {useEffect} from 'react';
 import useStyle from './styles'
-import Divider from "@material-ui/core/Divider";
 import NewMessage from "./components/NewMessage";
 import MessageList from "./components/MessageList";
 import {getAllMessages} from "../../api/api_messages";
