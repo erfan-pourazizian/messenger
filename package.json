@@ -10,8 +10,6 @@
     "@material-ui/styles": "^4.3.0",
     "@mui/icons-material": "^5.10.9",
     "@mui/material": "^5.10.11",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/user-event": "^12.1.10",
     "axios": "^0.19.2",
     "classnames": "^2.2.6",
     "i18next": "^19.6.3",
@@ -44,8 +42,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@testing-library/react": "^12.1.2"
   }
 }
