@@ -76,7 +76,7 @@ const LeftSidebar = () => {
                 </Grid>
                 <Divider className={classes.divider} />
                 <div className={classes.profButton}>
-                    <Button variant="text" onClick={() => {
+                    <Button sx={{textTransform: 'initial'}} variant="text" onClick={() => {
                         inputRef.current.click();
                     }}>My Profile</Button>
                 </div>

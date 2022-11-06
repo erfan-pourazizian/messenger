@@ -112,7 +112,7 @@ const useStyles = makeStyles((theme) => ({
     marginRight: "auto",
     textAlign: "center",
     paddingTop: '0.5rem',
-    paddingBottom: '0.5rem'
+    paddingBottom: '0.5rem',
   },
   divider: {
     backgroundColor: "#232f39",

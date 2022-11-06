@@ -10,7 +10,7 @@ import Badge from '@mui/material/Badge';
 import TranslateIcon from '@mui/icons-material/Translate';
 import { useTranslation } from "react-i18next";
 import { Button } from '@mui/material';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Header = () => {
     const theme = useTheme()
@@ -51,16 +51,16 @@ const Header = () => {
                 <Divider orientation={"vertical"} className={classes.divider} />
 
                 <Badge color="secondary" badgeContent=" " variant="dot" overlap="circular" sx={{ marginRight: '1rem' }}>
-                    <NotificationsIcon sx={{ color: '#c7d6e5', padding: '0 1px',placeSelf: 'center' }} />
+                    <NotificationsIcon sx={{ color: '#c7d6e5', padding: '0 1px', placeSelf: 'center' }} />
                 </Badge>
 
-                <TranslateIcon sx={{ color: '#c7d6e5', marginRight: '1rem', cursor: 'pointer',placeSelf: 'center' }} onClick={() => {
+                <TranslateIcon sx={{ color: '#c7d6e5', marginRight: '1rem', cursor: 'pointer', placeSelf: 'center' }} onClick={() => {
                     changeLang()
                 }} />
 
                 <Link to={"/"}>
-                    <Button className={classes.messengerButton} variant="contained">{t('home')}
-                    <img className={classes.homeIcon} src="/images/home.png" alt="home" />
+                    <Button sx={{ textTransform: 'initial' }} className={classes.messengerButton} variant="contained">{t('home')}
+                        <img className={classes.homeIcon} src="/images/home.png" alt="home" />
                     </Button>
                 </Link>
             </div>
