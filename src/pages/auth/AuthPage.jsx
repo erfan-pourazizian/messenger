@@ -133,7 +133,7 @@ const AuthPage = () => {
     return (
         <div className={classes.main}>
             <Paper className={classes.container}>
-                <img className={classes.logo} alt={"messenger"} src={"/images/Logo.png"} />
+            <img className={classes.logo} src={"/images/logo.png"} alt={"logo"} />
                 <Tabs
                     value={tab}
                     indicatorColor="primary"
