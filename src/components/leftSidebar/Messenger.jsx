@@ -26,7 +26,7 @@ export const Messenger = ({ name, id, img }) => {
                     <Typography className={classes.peopleProfName}>{name}</Typography>
                     <Typography className={classes.peopleProfId}>@{id}</Typography>
                 </Grid>
-                <Button injectFirst sx={{ textTransform: 'initial' }} className={classes.messengerButton} variant="contained">{
+                <Button sx={{ textTransform: 'initial' }} className={classes.messengerButton} variant="contained">{
                     t('watch')}
                 </Button>
             </Grid>
