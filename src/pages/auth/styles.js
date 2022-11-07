@@ -29,7 +29,9 @@ const useStyles = makeStyles(theme => ({
     tab: {
         flex: 1,
         fontSize: '16px',
-        fontFamily: 'shabnam !important'
+        fontFamily: 'shabnam !important',
+        overflow: 'hidden !important',
+        MozOverflow:'hidden !important',
     },
     containerInput: {
         padding: '1rem 0.8rem 0.1rem 0.8rem',
@@ -49,11 +51,13 @@ const useStyles = makeStyles(theme => ({
     dividerText: {
         textAlign: 'center',
         marginTop: '5px',
-        color: 'black'
+        color: 'black',
+        [theme.breakpoints.down("xs")]: {
+            fontSize: '0.8rem'
+        },
     },
     iconsParent: {
         textAlign: "center",
-        margin: '10px',
         padding: '10px'
     },
     icon: {
@@ -62,7 +66,12 @@ const useStyles = makeStyles(theme => ({
         height: '24px'
     },
     inputText: {
-        color: 'black'
+        color: 'black',
+        overflow: 'hidden !important',
+        MozOverflow:'hidden !important',
+        [theme.breakpoints.down("xs")]: {
+            fontSize: '0.8rem'
+        },
     },
     button : {
         backgroundColor: '#31528c',

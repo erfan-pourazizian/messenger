@@ -23,6 +23,9 @@ const useStyles = makeStyles((theme) => ({
   },
   hashtag: {
     textAlign: "initial",
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "0.9rem",
+    },
   },
   hashTagParent: {
     marginBottom: "0.5rem !important",

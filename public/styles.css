@@ -48,6 +48,11 @@ width
   z-index: -1;
   background: #192a48;
 }
+@media only screen and (max-width: 450px) {
+  .circles {
+    width: 90%;
+  }
+}
 
 .circles li{
   position: absolute;

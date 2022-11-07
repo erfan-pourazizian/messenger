@@ -5,7 +5,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#05141c",
     width: "23%",
     padding: "0 1rem",
-    height: '100vh',
+    height: "100vh",
     overflow: "hidden",
     fontSize: "17px",
     scrollbarWidth: "none",
@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     position: "relative",
     marginTop: "1.6rem",
-    paddingBottom: '0.5rem'
+    paddingBottom: "0.5rem",
   },
   eachBestUser: {
     width: "100%",
@@ -34,14 +34,23 @@ const useStyles = makeStyles((theme) => ({
     marginRight: "0.5rem",
     width: "max-content",
     alignItems: "flex-start",
+    [theme.breakpoints.down("xs")]: {
+      placeSelf: 'center'
+    },
   },
   profName: {
     fontSize: "1.2rem",
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "1rem",
+    },
   },
   profId: {
     color: "#4c5b66",
     fontSize: "0.9rem",
     direction: "ltr",
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "0.7rem",
+    },
   },
   settingIcon: {
     width: "22px",
@@ -60,6 +69,9 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "18px !important",
     fontWeight: "600 !important",
     marginBottom: "11px",
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "1rem !important",
+    },
   },
   messengerParent: {
     padding: "7px 0",
@@ -80,6 +92,9 @@ const useStyles = makeStyles((theme) => ({
     right: "40%",
     left: "50%",
     top: "2.8rem",
+    [theme.breakpoints.down("xs")]: {
+      right: "37%",
+    },
   },
   menuContainer: {
     cursor: "pointer",
@@ -111,28 +126,37 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: "auto",
     marginRight: "auto",
     textAlign: "center",
-    paddingTop: '0.5rem',
-    paddingBottom: '0.5rem',
+    paddingTop: "0.5rem",
+    paddingBottom: "0.5rem",
   },
   divider: {
     backgroundColor: "#232f39",
   },
   peopleProfName: {
     fontSize: "1rem",
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "0.8rem",
+    },
   },
   peopleProfId: {
     color: "#5b6672",
     fontSize: "0.9rem",
     direction: "ltr",
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "0.7rem",
+    },
   },
   messengerButton: {
-    borderRadius: '12px !important',
-    height: '2rem !important',
-    placeSelf: 'center !important',
-    backgroundColor: '#f7fcfe !important',
-    color: 'black !important',
-    marginRight: 'auto !important' 
+    borderRadius: "12px !important",
+    height: "2rem !important",
+    placeSelf: "center !important",
+    backgroundColor: "#f7fcfe !important",
+    color: "black !important",
+    marginRight: "auto !important",
+    [theme.breakpoints.down("xs")]: {
+      height: "1.5rem !important",
+      fontSize: '0.8rem !important'
+    },
   },
-  
 }));
 export default useStyles;

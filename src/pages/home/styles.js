@@ -51,6 +51,9 @@ const useStyles = makeStyles((theme) => ({
   messageContainer: {
     flex: 1,
     marginRight: "1rem",
+    [theme.breakpoints.down("xs")]: {
+      marginRight: "0.5rem",
+    },
   },
   input: {
     marginRight: "0.7rem",
@@ -89,7 +92,6 @@ const useStyles = makeStyles((theme) => ({
     marginRight: "-1rem",
     width: "26px",
     height: "26px",
-    filter: "drop-shadow(3px 14px 42px #19D896) !important",
     placeSelf: "center",
   },
   newMessageLike: {
@@ -106,19 +108,31 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "0.8rem",
     color: "#56646f",
     marginLeft: "-1rem",
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "0.7rem",
+    },
   },
   messageItemName: {
     fontSize: "1.2rem",
     marginTop: "0.5rem",
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "0.8rem",
+    },
   },
   messageItemId: {
     fontSize: "0.9rem",
     color: "#414f5a",
     marginRight: "0.5rem",
     marginTop: "0.75rem",
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "0.7rem",
+    },
   },
   messageText: {
     fontSize: "1rem",
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "0.9rem",
+    },
   },
   messageImg: {
     width: "99%",
@@ -151,6 +165,9 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: "auto",
     fontSize: "1rem",
     color: "#56646f",
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "0.7rem",
+    },
   },
 }));
 
