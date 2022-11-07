@@ -5,7 +5,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#1b2730",
     width: "18%",
     padding: "1.5rem 1rem",
-    height: '100vh',
+    height: '81vh',
     overflow: "hidden !important",
     marginRight: "1rem",
     borderRadius: "0.8rem",
@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
       width: "auto",
       marginRight: 0,
       borderRadius: 0,
-    
+      height: '100vh',
     },
   },
   hashTagTitle: {
