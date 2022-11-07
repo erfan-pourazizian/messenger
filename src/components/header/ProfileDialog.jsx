@@ -89,7 +89,7 @@ export default function ProfileDialog() {
     <div>
       <Grid container className={classes.container} onClick={handleClickOpen}>
         <img src="/images/arrow.png" className={classes.arrow} alt="arrow" />
-        <Typography injectFirst className={classes.user}>
+        <Typography className={classes.user}>
           {localStorage.getItem("username")}
         </Typography>
         <img src={getImage()} className={classes.profile} alt={"profile"} />
