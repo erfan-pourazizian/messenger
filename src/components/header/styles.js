@@ -34,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "15px",
     padding: "3px 3px",
     marginRight: "2rem",
+    cursor: 'pointer',
     [theme.breakpoints.down("xs")]: {
       marginRight: 0,
     },
