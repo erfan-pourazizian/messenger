@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
   input: {
     marginRight: "0.7rem",
     border: "none",
-    fontSize: "1.2rem",
+    fontSize: "1.1rem",
     flex: 1,
     fontWeight: 400,
     color: "white",
