@@ -121,7 +121,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "1rem",
   },
   messageImg: {
-    width: "100%",
+    width: "99%",
     height: "20rem",
     marginTop: "1rem",
     borderRadius: "1rem",
