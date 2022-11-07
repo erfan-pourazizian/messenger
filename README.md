@@ -9,7 +9,6 @@
 ```
 :.
 |   .gitignore
-|   output.doc
 |   package-lock.json
 |   package.json
 |   README.md
