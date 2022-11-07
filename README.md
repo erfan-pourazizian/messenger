@@ -1,4 +1,4 @@
-### [Live Site](https://messenger-ep.netlify.app/)
+### [Live Site](https://messenger-ep.vercel.app/)
 
 ![Screenshot (73)-min](https://user-images.githubusercontent.com/91010211/200208776-870c6b6a-eae7-4691-b4a4-56ed1fd9ce61.png)
 
