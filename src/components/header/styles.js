@@ -45,6 +45,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "50%",
     marginRight: "0.5rem",
     placeSelf: "center",
+    objectFit: "cover"
   },
   arrow: {
     width: "8px",
@@ -61,6 +62,7 @@ const useStyles = makeStyles((theme) => ({
     width: "40px",
     height: "40px",
     borderRadius: "50%",
+    objectFit: "cover"
   },
   dialogUser: {
     color: "black !important",

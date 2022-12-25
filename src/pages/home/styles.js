@@ -47,6 +47,8 @@ const useStyles = makeStyles((theme) => ({
     height: 60,
     width: 60,
     borderRadius: "50%",
+    objectFit: "cover"
+
   },
   messageContainer: {
     flex: 1,
