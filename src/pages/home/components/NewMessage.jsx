@@ -107,7 +107,7 @@ const NewMessage = ({updateMessages}) => {
                 <Button id={"newMessageBtn"} variant={"contained"} color={"primary"}
                         className={classes.newMessageBtn} onClick={newMessageClick}>{t("btn.message")}</Button>
                 <IconButton className={classes.newMessageImgBtn} onClick={selectImg}>
-                    <img src={"/images/gallery.png"}  alt={"gallery"}/>
+                    <img src={"/images/gallery.png"}  alt={"gallery"} accept="image/png, image/jpeg"/>
                 </IconButton>
             </Grid>
         </div>

@@ -37,7 +37,7 @@ function SimpleDialog(props) {
       <DialogTitle sx={{ color: 'black', backgroundColor: '#f7fcfe',textAlign: 'center' }}>{t('account-details')}</DialogTitle>
       <List sx={{ pt: 0, backgroundColor: '#f7fcfe',direction: 'rtl'}}>
         <ListItem button onClick={() => handleListItemClick()}>
-          <img src={getImage()} alt="profile" className={classes.dialogProfile} />
+          <img src={getImage()} alt="profile" className={classes.dialogProfile} accept="image/png, image/jpeg" />
           <ListItemText disableTypography primary={
             <Typography sx={{ color: 'black', marginLeft: '2.5rem' }}>
               {localStorage.getItem("username")}
