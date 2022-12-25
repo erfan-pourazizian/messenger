@@ -80,6 +80,7 @@ const useStyles = makeStyles((theme) => ({
     width: 50,
     height: 50,
     borderRadius: "50%",
+    objectFit: "cover"
   },
   messages: {
     width: "100%",
@@ -92,6 +93,7 @@ const useStyles = makeStyles((theme) => ({
     right: "40%",
     left: "50%",
     top: "2.8rem",
+    objectFit: "cover",
     [theme.breakpoints.down("xs")]: {
       right: "37%",
     },

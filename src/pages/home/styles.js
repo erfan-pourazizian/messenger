@@ -154,6 +154,7 @@ const useStyles = makeStyles((theme) => ({
     width: 60,
     height: 60,
     borderRadius: "50%",
+    objectFit: "cover"
   },
   buttonSection: {
     marginTop: 16,
